@@ -1,49 +1,45 @@
+.boton-informes {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 15px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+}
+
+.boton-informes:hover {
+  background-color: var(--gris-claro);
+}
+
+.image-principal {
+  width: 350px;
+  margin: 15px;
+}
 
 .boton-paso {
-    background-color: var(--magenta);
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 10px;
-    color: #fff;
-    text-transform: uppercase;
-    text-align: center;
-    text-decoration: none;
-  }
-  
-.boton-paso:hover {
-    background-color: var(--gris-claro);
-  }
+  background-color: var(--magenta);
+  border-radius: 10px;
+  margin: 25px;
+  height: 400px;
+  width: 100px;
+  padding: 1rem;
+  font-size: 28px;
+  color: #fff;
+  text-decoration: none;
+}
 
 .boton-generales {
-    background-color: var(--celeste);
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 10px;
-    color: #fff;
-    text-transform: uppercase;
-    text-align: center;
-    text-decoration: none;
-  }
-  
-.boton-generales:hover {
-    background-color: var(--gris-claro);
-  }
-  
-
-.boton-informes {
-    display: inline-block;
-    padding: 5px;
-    border-radius: 15px;
-    border: 1px solid white;
-    background-color: transparent;
-    color: #fff;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    text-decoration: none;
-  }
-  
-.boton-informes:hover {
-    background-color: var(--gris-claro);
-  }
-  
+  background-color: var(--celeste);
+  border-radius: 10px;
+  margin: 25px;
+  height: 400px;
+  width: 100px;
+  padding: 1rem;
+  font-size: 28px;
+  color: #fff;
+  text-decoration: none;
+}

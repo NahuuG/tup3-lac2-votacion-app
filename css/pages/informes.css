@@ -1,0 +1,65 @@
+.menu-header-page .boton-paso {
+  background-color: var(--magenta);
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+}
+
+.menu-header-page .boton-paso:hover {
+  background-color: var(--gris-claro);
+}
+
+.menu-header-page .boton-generales {
+  background-color: var(--celeste);
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+}
+
+.menu-header-page .boton-generales:hover {
+  background-color: var(--gris-claro);
+}
+
+.mensaje-error {
+  width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+  background-color: var(--mensaje-usuario-rojo);
+}
+
+.mensaje-exito {
+  width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+  background-color: var(--mensaje-usuario-verde);
+}
+
+.mensaje-incompleto {
+  width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+  background-color: var(--mensaje-usuario-amarillo);
+}
