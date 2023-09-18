@@ -16,45 +16,35 @@
         <!--Barra de logo portal-->
         <div class="header-page">
             <a href="index.html"><img src="img/icons/Logo_DINE_negativo.a88f983e.png" alt="logo" class="logo"
-                    width="150px"></a> Dirección Nacional
-            Electoral
+                    width="150px"></a> Dirección Nacional Electoral
         </div>
         <!--Barra de menú principal-->
-        <ul>
-            <li>
-                <a class="active" href="">
-                    <select id="seleccion-año">
-                        <option value="2023">2023</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
-                    </select>
-                    Año
-                </a>
-            </li>
-            <li>
-                <a class="active" href="">
-                    <select id="seleccion-cargo">
-                        <option value="2023">2023</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
-                    </select>
-                    Cargo
-                </a>
-            </li>
-            <li>
-                <a class="active" href="">
-                    <select id="seleccion-distrito">
-                        <option value="2023">2023</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
-                    </select>
-                    Distrito
-                </a>
-            </li>
-            <li><button><a class="active" href="">Lupa</a></button></li>
-            <li><button><a class="active" href="informes.html">Informes</a></button></li>
-            <li><button><a class="active" href="index.html">Inicio</a></button></li>
-        </ul>
+
+                <select id="seleccion-año" name="seleccion-año">
+                    <option value="" disabled selected>Año</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                </select>
+
+                <select id="seleccion-cargo" name="seleccion-cargo">
+                    <option value="" disabled selected>Cargo</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                </select>
+
+                <select id="seleccion-distrito" name="seleccion-distrito">
+                    <option value="" disabled selected>Distrito</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                </select>
+
+
+                <button><a class="active" href="">Lupa</a></button>
+                <button><a class="active" href="informes.html">Informes</a></button>
+            <button><a class="active" href="index.html">Inicio</a></button>
     </header>
     <!-- Contenido principal de la página -->
     <main>
@@ -260,9 +250,6 @@
                     <p class="boton-recuadro">Participación sobre escrutado</p>
                 </div>
             </a>
-
-
-
             <table>
                 <tr>
                     <th>Agrupaciones políticas</th>
@@ -545,6 +532,21 @@
     <!--Pie de página-->
     <footer>
         <p>Desarrollado con ♥ - LC2</p>
+        <div>
+            <img src="img/icons/Ministerio-del-Interior_pluma.1ab9a7a7.png" alt="Logo de Argentina" width="150">
+            <img src="img/icons/Logo_DINE_negativo.a88f983e.png" alt="Logo de observatorio" width="150">
+            <img src="img/icons/logos_001-10.4430c8d5.png" alt="Direcciona Nacional Electoral" width="150">
+        </div>
+
+        <div>
+            <p>Resultados Provisorios en base a telegramas recibidos (Art. 43 Ley 26571 y Art. 105 Ley 19945). Los
+                porcentajes de las agrupaciones políticas son calculados sobre los votos válidos (PASO) conforme al art.
+                45 Ley 26.571 y afirmativos (Generales). No se incluyen los votos correspondientes a los electores
+                residentes en el exterior ni privados de la libertad. Al usar este sitio usted acepta los <a
+                    href="https://">Términos y
+                    Condiciones</a>
+            </p>
+        </div>
     </footer>
 </body>
 
