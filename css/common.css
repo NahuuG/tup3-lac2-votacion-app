@@ -1,5 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
 
+:root {
+  --magenta: #ee3d8f;
+  --celeste: #37bbed;
+  --morado: #9283be;
+  --gris-claro: #9e9e9e;
+  --titulos: #333;
+  --textos: #333;
+  --fondo-pantalla: rgb(235, 245, 251);
+  --fondo-Cabecera: #18a0fb;
+  --fondo-Footer: #333;
+  --fondo-Menu: #333;
+  --texto-footer: #9e9e9e;
+  --titulo-Grilla: #727272;
+  --borde-inferior-Grilla: #727272;
+  --borde-Grilla: #c5c5c5;
+  --grafica-amarillo: rgb(252, 210, 0);
+  --grafica-amarillo-claro: rgba(252, 210, 0, 0.3);
+  --grafica-celeste: rgb(0, 169, 232);
+  --grafica-celeste-claro: rgba(0, 169, 232, 0.3);
+  --grafica-bordo: rgb(171, 40, 40);
+  --grafica-bordo-claro: rgba(171, 40, 40, 0.3);
+  --grafica-lila: rgb(112, 76, 159);
+  --grafica-lila-claro: rgba(112, 76, 159, 0.5);
+  --grafica-lila2: rgb(77, 46, 110);
+  --grafica-lila2-claro: rgba(77, 46, 110, 0.5);
+  --grafica-gris: rgb(128, 128, 128);
+  --grafica-gris-claro: rgb(128, 128, 128, 0.5);
+  --grafica-verde: rgb(102, 171, 60);
+  --grafica-verde-claro: rgba(102, 171, 60, 0.5);
+  --mensaje-usuario-amarillo: #ffc107;
+  --mensaje-usuario-verde: #28a745;
+  --mensaje-usuario-rojo: #dc3545;
+}
+
 * {
   font-family: 'Roboto', sans-serif;
 }
@@ -11,3 +45,56 @@ body {
   background-color: rgb(240, 240, 240);
 }
 
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color: var(--textos);
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  color: var(--titulos);
+  padding-bottom: 20px;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  color: var(--titulos);
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: var(--titulos);
+}
+
+.header-page {
+  padding: 0.5em;
+  background-color: var(--fondo-Cabecera);
+  color: white;
+  width: 90%;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+}
+
+.menu-header-page {
+  margin-left: 13px;
+  margin-right: 13px;
+  padding-top: 20px;
+  background-color: var(--fondo-Menu);
+  width: 100%;
+}
+
+footer {
+  background-color: var(--fondo-Footer);
+  color: var(--texto-footer);
+}
+
+footer img {
+  width: 40px;
+  height: auto;
+}
