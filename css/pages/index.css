@@ -43,3 +43,11 @@
   color: #fff;
   text-decoration: none;
 }
+
+.sec-titulo {
+  display: flex;
+}
+
+.texto-principal {
+  width: 60%;
+}
