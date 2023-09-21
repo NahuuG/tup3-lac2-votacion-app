@@ -1,3 +1,23 @@
+.boton-inicio-header {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--gris-claro);
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+  height: 15px;
+  margin: 0 5px 20px 5px;
+  margin-left: auto;
+}
+
+.boton-inicio-header:hover {
+  background-color: var(--gris-claro);
+}
+
+
 .menu-header-page .boton-paso {
   background-color: var(--magenta);
   border-radius: 5px;
@@ -62,4 +82,49 @@
   font-weight: 200;
   text-align: center;
   background-color: var(--mensaje-usuario-amarillo);
+}
+
+.mensaje-exito i,
+.mensaje-error i,
+.mensaje-incompleto i {
+  margin-right: 10px;
+}
+
+.encabezado {
+  width: 1024px;
+  margin: 0 auto 50px auto;
+}
+
+table {
+  width: 1024px;
+  margin: 0 auto 50px auto;
+  border-radius: 15px;
+  border: 1px solid var(--borde-Grilla);
+  border-collapse: collapse;
+  background-color: rgb(250, 250, 250);
+}
+
+thead {
+  text-align: center;
+  color: var(--titulo-Grilla);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--borde-inferior-Grilla);
+}
+
+
+tbody tr {
+  background-color: rgb(250, 250, 250);
+  border-bottom: 1px solid var(--borde-inferior-Grilla);
+  padding: 15px 0px;
+  font-size: 12px;
+  vertical-align: top;
+  text-align: center;
+
+}
+
+tbody tr:hover {
+  background-color: rgb(255, 255, 255);
 }

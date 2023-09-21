@@ -92,6 +92,67 @@ h3 {
 }
 
 
+.logo {
+  margin-left: 60px;
+}
+
+.consultar {
+  color: white;
+  text-transform: uppercase;
+  padding: 5px;
+  align-items: center;
+  width: 80px;
+  height: 15px;
+  margin: 0 5px 20px 5px;
+}
+
+.boton-informes {
+  padding: 5px;
+  border-radius: 15px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+  height: 15px;
+  margin: 0 5px 20px 5px;
+}
+
+.boton-informes:hover {
+  background-color: var(--gris-claro);
+}
+
+.boton-paso-header {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--magenta);
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+  height: 15px;
+  margin: 0 5px 20px 5px;
+}
+
+.boton-generales-header {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--celeste);
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+  height: 15px;
+  margin: 0 5px 20px 5px;
+}
+
 
 footer {
   background-color: var(--fondo-footer);

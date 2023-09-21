@@ -1,77 +1,13 @@
-.logo {
-  margin-left: 60px;
-}
-
-.consultar {
-  color: white;
-  text-transform: uppercase;
-  padding: 5px;
-  align-items: center;
-  width: 80px;
-  height: 15px;
-  margin: 0 5px 20px 5px;
-}
-
-.boton-informes {
-  padding: 5px;
-  border-radius: 15px;
-  border: 1px solid white;
-  background-color: transparent;
-  color: #fff;
-  font-size: 10px;
-  text-transform: uppercase;
-  text-align: center;
-  text-decoration: none;
-  width: 80px;
-  height: 15px;
-  margin: 0 5px 20px 5px;
-}
-
-.boton-informes:hover {
-  background-color: var(--gris-claro);
-}
-
-.boton-paso-header {
-  padding: 5px;
-  border-radius: 5px;
-  background-color: var(--magenta);
-  color: #fff;
-  font-size: 10px;
-  text-transform: uppercase;
-  text-align: center;
-  text-decoration: none;
-  width: 80px;
-  height: 15px;
-  margin: 0 5px 20px 5px;
-}
-
-.boton-generales-header {
-  padding: 5px;
-  border-radius: 5px;
-  background-color: var(--celeste);
-  color: #fff;
-  font-size: 10px;
-  text-transform: uppercase;
-  text-align: center;
-  text-decoration: none;
-  width: 80px;
-  height: 15px;
-  margin: 0 5px 20px 5px;
-}
-
-
 .encabezado {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  margin: 0 auto;
+  width: 1024px;
+  margin: 0 auto 50px auto;
 }
+
 
 .sec-titulo {
+  width: 1024px;
+  margin: 0 auto 50px auto;
   align-items: flex-start;
-  width: 90%;
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
@@ -81,7 +17,7 @@
 .texto-principal {
   flex: 2;
   justify-content: start;
-  padding: 20px; 
+  padding: 20px;
 }
 
 .image-principal {
