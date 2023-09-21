@@ -14,15 +14,12 @@
 
 
 .texto-principal {
-  flex: 2;
   justify-content: start;
-  padding: 20px;
+  margin: 5px;
 }
 
 .image-principal {
   width: 350px;
-  margin: 15px;
-  flex: 1;
 }
 
 .sec-contenido {
