@@ -9,7 +9,7 @@
   --textos: #333;
   --fondo-pantalla: rgb(235, 245, 251);
   --fondo-Cabecera: #18a0fb;
-  --fondo-Footer: #333;
+  --fondo-footer: #333;
   --fondo-Menu: #333;
   --texto-footer: #9e9e9e;
   --titulo-Grilla: #727272;
@@ -74,7 +74,7 @@ h3 {
   padding: 0.5em;
   background-color: var(--fondo-Cabecera);
   color: white;
-  width: 100%;
+  width: auto;
   margin-top: 0;
   margin-right: auto;
   margin-bottom: auto;
@@ -82,19 +82,46 @@ h3 {
 }
 
 .menu-header-page {
-  margin-left: 13px;
-  margin-right: 13px;
   padding-top: 20px;
   background-color: var(--fondo-Menu);
-  width: 100%;
+  width: auto;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
+
+
 footer {
-  background-color: var(--fondo-Footer);
-  color: var(--texto-footer);
+  background-color: var(--fondo-footer);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
 }
 
 footer img {
-  width: 40px;
-  height: auto;
+  max-height: 40px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.texto-footer {
+  text-align: center;
+  flex: 1;
+  display: flex;
+}
+
+.texto-footer p {
+  color: var(--texto-footer);
+  text-align: left;
+  margin-left: 10px;
 }

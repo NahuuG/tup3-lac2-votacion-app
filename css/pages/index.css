@@ -1,5 +1,18 @@
+.logo {
+  margin-left: 60px;
+}
+
+.consultar {
+  color: white;
+  text-transform: uppercase;
+  padding: 5px;
+  align-items: center;
+  width: 80px;
+  height: 15px;
+  margin: 0 5px 20px 5px;
+}
+
 .boton-informes {
-  display: inline-block;
   padding: 5px;
   border-radius: 15px;
   border: 1px solid white;
@@ -9,45 +22,128 @@
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
+  width: 80px;
+  height: 15px;
+  margin: 0 5px 20px 5px;
 }
 
 .boton-informes:hover {
   background-color: var(--gris-claro);
 }
 
+.boton-paso-header {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--magenta);
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+  height: 15px;
+  margin: 0 5px 20px 5px;
+}
+
+.boton-generales-header {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--celeste);
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+  height: 15px;
+  margin: 0 5px 20px 5px;
+}
+
+
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.sec-titulo {
+  align-items: flex-start;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+
+.texto-principal {
+  flex: 2;
+  justify-content: start;
+  padding: 20px; 
+}
+
 .image-principal {
   width: 350px;
   margin: 15px;
+  flex: 1;
+}
+
+.sec-contenido {
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
 }
 
 .boton-paso {
   background-color: var(--magenta);
   border-radius: 10px;
   margin: 25px;
-  height: 400px;
-  width: 100px;
+  height: 100px;
+  width: 400px;
   padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.boton-paso:hover {
+  background-color: var(--gris-claro);
+}
+
+
+.imagen-urna {
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+}
+
+.palabra-paso {
+  color: white;
   font-size: 28px;
-  color: #fff;
-  text-decoration: none;
 }
 
 .boton-generales {
   background-color: var(--celeste);
   border-radius: 10px;
   margin: 25px;
-  height: 400px;
-  width: 100px;
+  height: 100px;
+  width: 400px;
   padding: 1rem;
-  font-size: 28px;
-  color: #fff;
-  text-decoration: none;
-}
-
-.sec-titulo {
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.texto-principal {
-  width: 60%;
+.boton-generales:hover {
+  background-color: var(--gris-claro);
+}
+
+.boton-paso a,
+.boton-generales a {
+  text-decoration: none;
 }
