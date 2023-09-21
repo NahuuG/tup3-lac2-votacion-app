@@ -55,13 +55,11 @@
 }
 
 table {
-  width: 1024px;
+  width: 1024 px;
   margin: 0 auto 50px auto;
   border-radius: 15px;
   border: 1px solid var(--borde-Grilla);
-  border-collapse: collapse;
   background-color: rgb(250, 250, 250);
-
 }
 
 table thead {
@@ -82,11 +80,14 @@ table tbody tr {
   font-size: 12px;
   vertical-align: top;
   text-align: center;
-
 }
 
 tbody tr:hover {
   background-color: rgb(255, 255, 255);
+}
+
+table tbody td {
+  margin: 5px;
 }
 
 .mapas {
@@ -109,46 +110,54 @@ tbody tr:hover {
   color: var(--celeste);
 }
 
+
 .iconos-datos-generales {
   display: flex;
-  align-items: center; 
-  margin-right: 10px;
+  justify-content: space-around;
+  width: auto;
+}
+
+.imagen-informes {
+  width: auto;
 }
 
 .mesas-escrutadas {
   background-color: var(--celeste);
   border-radius: 5px;
   margin: 2px;
-  width: 150px;
   font-size: 10px;
   color: #fff;
-  text-align: left;
+  width: 150px;
+  height: auto;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .electores {
   background-color: var(--magenta);
   border-radius: 5px;
   margin: 2px;
-  width: 150px;
   font-size: 10px;
   color: #fff;
-  text-align: left;
+  width: 150px;
+  height: auto;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .participacion-sobre-escrutado {
   background-color: var(--morado);
   border-radius: 5px;
   margin: 2px;
-  width: 150px;
   font-size: 10px;
   color: #fff;
-  text-align: left;
+  width: 150px;
+  height: auto;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .palabras-datos-generales {
@@ -158,4 +167,19 @@ tbody tr:hover {
 
 .bold {
   font-weight: bold;
+}
+
+.datos-por-agrupacion {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 50px);
+  overflow-y: scroll;
+  height: 325px;
+  padding: auto;
+  font-size: 10px;
+  color: var(--textos);
+}
+
+.agrupacion-item {
+  text-align: left;
 }
