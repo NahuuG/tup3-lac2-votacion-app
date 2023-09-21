@@ -186,3 +186,45 @@ footer img {
   text-align: left;
   margin-left: 10px;
 }
+
+.mensaje-error {
+  width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+  background-color: var(--mensaje-usuario-rojo);
+}
+
+.mensaje-exito {
+  width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+  background-color: var(--mensaje-usuario-verde);
+}
+
+.mensaje-incompleto {
+  width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+  background-color: var(--mensaje-usuario-amarillo);
+}
+
+.mensaje-exito i,
+.mensaje-error i,
+.mensaje-incompleto i {
+  margin-right: 10px;
+}

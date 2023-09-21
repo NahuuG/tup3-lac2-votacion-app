@@ -11,8 +11,8 @@
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/pages/index.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/5.15.4/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 
 <body>
@@ -53,6 +53,13 @@
     </header>
     <!-- Contenido principal de la página -->
     <main>
+        <section id="sec-messages">
+            <!-- Mensajes de error o éxito -->
+            <p class="mensaje-exito"><i class="fas fa-thumbs-up"></i>Operación completada con éxito.</p>
+            <p class="mensaje-error"><i class="fas fa-exclamation-triangle"></i>Se produjo un error en la operación.</p>
+            <p class="mensaje-incompleto"><i class="fas fa-exclamation"></i>La operacion no se pudo completar.</p>
+        </section>
+
         <section id="sec-titulo">
             <!--Seccion para agregar una palicula favorita por codigo-->
             <h1>Elecciones 2021 | Paso</h1>
@@ -335,31 +342,25 @@
             </div>
         </section>
 
-        </section>
-        <section id="sec-messages">
-            <!-- Mensajes de error o éxito -->
-            <p class="mensaje-exito">Operación completada con éxito.</p>
-            <p class="mensaje-error">Se produjo un error en la operación.</p>
-            <p class="mensaje-incompleto">La operacion no se pudo completar.</p>
-        </section>
     </main>
     <!--Pie de página-->
     <footer>
-        <p>Desarrollado con ♥ - LC2</p>
-        <div>
-            <img src="img/icons/Ministerio-del-Interior_pluma.1ab9a7a7.png" alt="Logo de Argentina" width="150">
-            <img src="img/icons/Logo_DINE_negativo.a88f983e.png" alt="Logo de observatorio" width="150">
-            <img src="img/icons/logos_001-10.4430c8d5.png" alt="Direcciona Nacional Electoral" width="150">
-        </div>
+        <div class="footer-content">
+            <div class="images-footer">
+                <img src="img/icons/Ministerio-del-Interior_pluma.1ab9a7a7.png" alt="Logo de Argentina">
+                <img src="img/icons/Logo_DINE_negativo.a88f983e.png" alt="Logo de observatorio">
+                <img src="img/icons/logos_001-10.4430c8d5.png" alt="Direcciona Nacional Electoral">
+            </div>
 
-        <div>
-            <p>Resultados Provisorios en base a telegramas recibidos (Art. 43 Ley 26571 y Art. 105 Ley 19945). Los
-                porcentajes de las agrupaciones políticas son calculados sobre los votos válidos (PASO) conforme al art.
-                45 Ley 26.571 y afirmativos (Generales). No se incluyen los votos correspondientes a los electores
-                residentes en el exterior ni privados de la libertad. Al usar este sitio usted acepta los <a
-                    href="https://">Términos y
-                    Condiciones</a>
-            </p>
+            <div class="texto-footer">
+                <p>Resultados Provisorios en base a telegramas recibidos (Art. 43 Ley 26571 y Art. 105 Ley 19945). Los
+                    porcentajes de las agrupaciones políticas son calculados sobre los votos válidos (PASO) conforme al
+                    art.
+                    45 Ley 26.571 y afirmativos (Generales). No se incluyen los votos correspondientes a los electores
+                    residentes en el exterior ni privados de la libertad. Al usar este sitio usted acepta los <a href=""
+                        style="color: var(--texto-footer);text-decoration: none;">Términos y Condiciones</a>
+                </p>
+            </div>
         </div>
     </footer>
 </body>
