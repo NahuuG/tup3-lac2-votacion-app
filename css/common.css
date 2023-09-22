@@ -74,7 +74,6 @@ h3 {
   padding: 0.5em;
   background-color: var(--fondo-Cabecera);
   color: white;
-  width: auto;
   margin-top: 0;
   margin-right: auto;
   margin-bottom: auto;
@@ -91,10 +90,12 @@ h3 {
   justify-content: flex-start;
 }
 
-
-.logo {
-  margin-left: 60px;
+.ancho-header {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
+
 
 .consultar {
   color: white;
