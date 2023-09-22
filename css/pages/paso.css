@@ -1,410 +1,380 @@
-header {
-    background-color: #e0e0e0; /* Color de fondo del header */
-    width: 100% !important;
-  }
-
-.header-page{
-    background-color: var(--fondo-Cabecera);
-    color: white;
-    padding: 0.5em;
-}
-
-.menu-header-page {
-    display: flex;
-    align-items: center;
-}
-
 .desplegables {
-    margin-right: 20px; /* Espacio entre los select */
+  margin-right: 20px;
+  /* Espacio entre los select */
 }
 
-.menu-header-page{
-    text-align: center;
-    padding-bottom: 15px;
+.boton-inicio-header {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--gris-claro);
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+  height: 15px;
+  margin: 0 5px 20px 5px;
+  margin-left: auto;
+}
+
+
+.boton-inicio-header:hover {
+  color: var(--textos);
 }
 
 header select {
-    background: transparent;
-    border: none;
-    font-size: 14px;
-    height: 30px;
-    padding: 5px;
-    color: var(--celeste);
-    font-weight: bold;
-  }
-  
-  header label {
-    color: var(--celeste);
-    font-weight: bold;
-  }
-  
-  header ul {
-    background-color: var(--fondo-Menu);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 10px;
-    justify-content: flex-start;
-    align-items: center;
-    height: 45px;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  padding: 5px;
+  color: var(--celeste);
+  font-weight: bold;
 }
 
-    header ul li {
-    list-style: none;
+header label {
+  color: var(--celeste);
+  font-weight: bold;
 }
 
-#lupa{
-    width: 10px;
-    padding-right: 10px;
+header ul {
+  background-color: var(--fondo-Menu);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  height: 45px;
 }
 
-.filtrar {
-    background-color: white;
-    border-radius: 15px;
-    font-family: #fff;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--textos);
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 15px;
-    margin-bottom: 19px;
-    margin-left: 40px;
-    margin-top: 18px;
-    text-decoration: none;
-  }
-  
-.generales{
-    background-color: var(--celeste);
-    border-radius: 5px;
-    font-family: #fff;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    color: white;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 13px;
-    padding-right: 12px;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    margin-right: 5px;
-    margin-top: 18px;
-    text-decoration: none;
+header ul li {
+  list-style: none;
 }
 
-
-.boton-informes{
-    margin-bottom: 21px;
-    margin-left: 10px;
-    margin-right: 5px;
-    margin-top: 22px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 13px;
-    padding-right: 12px;
+.boton-filtrar {
+  background-color: white;
+  border-radius: 15px;
+  font-family: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--textos);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 13px;
+  padding-right: 12px;
+  text-align: center;
+  text-decoration: none;
 }
 
 
 
-  .boton-inicio {
-    background-color: var(--gris-claro);
-    border-radius: 5px;
-    font-family: #fff;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    margin-left: auto;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-    margin-right: 5px;
-    margin-top: 18px;
-  }
+.boton-informes {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 13px;
+  padding-right: 12px;
+  text-align: center;
+  text-decoration: none;
+}
 
-  i {
-    font-size: 16px;
-    margin-right: 10px;
-  }
-  
-  .carteles div {
-    width: 400px;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 10px;
-    color: white;
-    font-size: 12px;
-    text-align: center;
-  }
-  
-  div p {
-    color: white;
-  }
-  
-  .carteles div:first-child {
-    background-color: var(--mensaje-usuario-verde);
-  }
-  
-  .carteles div:nth-child(2) {
-    background-color: var(--mensaje-usuario-rojo);
-  }
-  
-  .carteles div:nth-child(3) {
-    background-color: var(--mensaje-usuario-amarillo);
-  }
-  
-  .titulo {
-    width: 90%;
-    margin: auto;
-  }
-  
-  .titulo p {
-    font-size: 14px;
-    color: var(--celeste);
-  }
-  
-  .agregar-informe-boton {
-    background-color: var(--gris-claro);
-    color: white;
-    font-size: 12px;
-    text-align: center;
-    padding: 5px 25px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    border: none;
-  }
-  
-  .agregar-informe-boton:hover {
-    color: var(--textos);
-  }
-  
-  .main {
-    width: 90%;
-    margin: auto;
-  }
-  
-  .main main {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .main-cards {
-    display: flex;
-  }
-  
-  .card {
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    margin: 15px;
-    width: 184px;
-    height: 70px;
-    padding: 0.5rem 1rem;
-    color: white;
-    font-size: 12px;
-  }
-  
-  .card div p {
-    color: white;
-  }
-  
-  .card div p:first-child {
-    font-weight: bold;
-  }
-  
-  .card:first-child {
-    background-color: var(--celeste);
-  }
-  
-  .card:nth-child(2) {
-    background-color: var(--magenta);
-  }
-  
-  .card:nth-child(3) {
-    background-color: var(--morado);
-  }
-  
-  .datos {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    margin: auto;
-    margin-bottom: 50px;
-    gap: 15px;
-  }
-  
-  .agrupaciones-container,
-  .mapa,
-  .chart-wrap {
-    border-radius: 25px;
-    border: 1px solid var(--borde-Grilla);
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    height: 500px;
-    overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    flex-grow: 1;
-    width: 30%;
-  }
-  
-  .agrupaciones-container h3 {
-    font-weight: bold;
-    padding: 1.8 rem 0 0 0;
-    text-align: center;
-    white-space: nowrap;
-  }
-  
-  .separador {
-    width: 95%;
-    margin: auto;
-    border: 1px solid rgb(199, 199, 199);
-  }
-  
-  .agrupacion h3 {
-    text-align: start;
-    margin-left: 5px;
-  }
-  
-  .agrupacion-texto {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-  }
-  
-  .agrupacion-texto h3 {
-    font-size: 12px;
-    font-weight: bold;
-  }
-  
-  .agrupacion-texto p {
-    font-size: 11px;
-    color: var(--textos);
-    padding: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  
-  .mapa,
-  .chart-wrap {
-    overflow: hidden;
-    text-align: center;
-  }
-  
-  .mapa {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .mapa svg {
-    width: 300px;
-    height: 100%;
-  }
-  
-  /*barra de progreso*/
-  .progress {
-    height: 35px;
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 15px;
-  }
-  .progress-bar {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    transition: width 0.25s;
-    border-radius: 5px;
-  }
-  .progress-bar-text {
-    margin-left: 10px;
-    font-weight: bold;
-    color: var(--textos);
-    font-size: 9px;
-  }
-  
-  .mapa .chart-wrap {
-    --chart-width: 260px;
-    --grid-color: #aaa;
-    --bar-thickness: 25px;
-    --bar-rounded: 3px;
-    --bar-spacing: 10px;
-    font-family: sans-serif;
-    width: var(--chart-width);
-  }
-  .chart-wrap .title {
-    font-weight: bold;
-    padding: 1.8em 0 2.8em;
-    text-align: center;
-    white-space: nowrap;
-  }
-  /* cuando definimos el gráfico en horizontal, lo giramos 90 grados */
-  .chart-wrap.horizontal .grid {
-    transform: rotate(-90deg);
-  }
-  .chart-wrap.horizontal .bar::after {
-    /* giramos las letras para horizontal*/
-    transform: rotate(45deg);
-    padding-top: 0px;
-    display: block;
-  }
-  .chart-wrap .grid {
-    margin-left: 50px;
-    position: relative;
-    padding: 5px 0 5px 0;
-    height: 100%;
-    width: 100%;
-    border-left: 2px solid var(--grid-color);
-    font-size: 10px;
-  }
-  /* posicionamos el % del gráfico*/
-  .chart-wrap .grid::before {
-    font-size: 0.8em;
-    font-weight: bold;
-    content: "0%";
-    position: absolute;
-    left: -0.5em;
-    top: -1.5em;
-  }
-  .chart-wrap .grid::after {
-    font-size: 0.8em;
-    font-weight: bold;
-    content: "100%";
-    position: absolute;
-    right: -1.5em;
-    top: -1.5em;
-  }
-  /* giramos las valores de 0% y 100% para horizontal */
-  .chart-wrap.horizontal .grid::before,
-  .chart-wrap.horizontal .grid::after {
-    transform: rotate(90deg);
-  }
-  /* LAS VARIABLES PARA DARLE ESTILO A LAS BARRAS NO EXISTEN!!, POR ESO NO SE VEN COMO DEBERIAN */
-  .chart-wrap .bar {
-    width: var(--bar-value);
-    height: var(--bar-thickness);
-    margin: var(--bar-spacing) 0;
-    background-color: var(--celeste);
-    border-radius: 0 var(--bar-rounded) var(--bar-rounded) 0;
-    margin: 10px 0;
-  }
-  
-  .chart-wrap .bar:hover {
-    opacity: 0.7;
-  }
-  .chart-wrap .bar::after {
-    content: attr(data-name);
-    margin-left: 100%;
-    padding: 10px;
-    display: inline-block;
-    white-space: nowrap;
-  }
-  
+
+
+.boton-inicio {
+  background-color: var(--gris-claro);
+  border-radius: 5px;
+  font-family: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  margin-left: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  margin-right: 5px;
+  margin-top: 18px;
+}
+
+i {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.carteles div {
+  width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+div p {
+  color: white;
+}
+
+
+.titulo {
+  width: 90%;
+  margin: auto;
+}
+
+.titulo p {
+  font-size: 14px;
+  color: var(--celeste);
+}
+
+.agregar-informe-boton {
+  background-color: var(--gris-claro);
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  padding: 5px 25px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: none;
+}
+
+.agregar-informe-boton:hover {
+  color: var(--textos);
+}
+
+.main {
+  width: 90%;
+  margin: auto;
+}
+
+.main main {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-cards {
+  display: flex;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  margin: 15px;
+  width: 184px;
+  height: 70px;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-size: 12px;
+}
+
+.card div p {
+  color: white;
+}
+
+.card div p:first-child {
+  font-weight: bold;
+}
+
+.card:first-child {
+  background-color: var(--celeste);
+}
+
+.card:nth-child(2) {
+  background-color: var(--magenta);
+}
+
+.card:nth-child(3) {
+  background-color: var(--morado);
+}
+
+.datos {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 50px;
+  gap: 15px;
+}
+
+.agrupaciones-container,
+.mapa,
+.chart-wrap {
+  border-radius: 25px;
+  border: 1px solid var(--borde-Grilla);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  height: 500px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  flex-grow: 1;
+  width: 30%;
+}
+
+.agrupaciones-container h3 {
+  font-weight: bold;
+  padding: 1.8 rem 0 0 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.separador {
+  width: 95%;
+  margin: auto;
+  border: 1px solid rgb(199, 199, 199);
+}
+
+.agrupacion h3 {
+  text-align: start;
+  margin-left: 5px;
+}
+
+.agrupacion-texto {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.agrupacion-texto h3 {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.agrupacion-texto p {
+  font-size: 11px;
+  color: var(--textos);
+  padding: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.mapa,
+.chart-wrap {
+  overflow: hidden;
+  text-align: center;
+}
+
+.mapa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapa svg {
+  width: 300px;
+  height: 100%;
+}
+
+/*barra de progreso*/
+.progress {
+  height: 35px;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: width 0.25s;
+  border-radius: 5px;
+}
+
+.progress-bar-text {
+  margin-left: 10px;
+  font-weight: bold;
+  color: var(--textos);
+  font-size: 9px;
+}
+
+.mapa .chart-wrap {
+  --chart-width: 260px;
+  --grid-color: #aaa;
+  --bar-thickness: 25px;
+  --bar-rounded: 3px;
+  --bar-spacing: 10px;
+  font-family: sans-serif;
+  width: var(--chart-width);
+}
+
+.chart-wrap .title {
+  font-weight: bold;
+  padding: 1.8em 0 2.8em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* cuando definimos el gráfico en horizontal, lo giramos 90 grados */
+.chart-wrap.horizontal .grid {
+  transform: rotate(-90deg);
+}
+
+.chart-wrap.horizontal .bar::after {
+  /* giramos las letras para horizontal*/
+  transform: rotate(45deg);
+  padding-top: 0px;
+  display: block;
+}
+
+.chart-wrap .grid {
+  margin-left: 50px;
+  position: relative;
+  padding: 5px 0 5px 0;
+  height: 100%;
+  width: 100%;
+  border-left: 2px solid var(--grid-color);
+  font-size: 10px;
+}
+
+/* posicionamos el % del gráfico*/
+.chart-wrap .grid::before {
+  font-size: 0.8em;
+  font-weight: bold;
+  content: "0%";
+  position: absolute;
+  left: -0.5em;
+  top: -1.5em;
+}
+
+.chart-wrap .grid::after {
+  font-size: 0.8em;
+  font-weight: bold;
+  content: "100%";
+  position: absolute;
+  right: -1.5em;
+  top: -1.5em;
+}
+
+/* giramos las valores de 0% y 100% para horizontal */
+.chart-wrap.horizontal .grid::before,
+.chart-wrap.horizontal .grid::after {
+  transform: rotate(90deg);
+}
+
+/* LAS VARIABLES PARA DARLE ESTILO A LAS BARRAS NO EXISTEN!!, POR ESO NO SE VEN COMO DEBERIAN */
+.chart-wrap .bar {
+  width: var(--bar-value);
+  height: var(--bar-thickness);
+  margin: var(--bar-spacing) 0;
+  background-color: var(--celeste);
+  border-radius: 0 var(--bar-rounded) var(--bar-rounded) 0;
+  margin: 10px 0;
+}
+
+.chart-wrap .bar:hover {
+  opacity: 0.7;
+}
+
+.chart-wrap .bar::after {
+  content: attr(data-name);
+  margin-left: 100%;
+  padding: 10px;
+  display: inline-block;
+  white-space: nowrap;
+}
