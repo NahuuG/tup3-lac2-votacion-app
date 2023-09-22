@@ -9,13 +9,17 @@
   margin: 0 auto 50px auto;
   align-items: flex-start;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  line-height: 25px;
+  font-size: 18px;
 }
 
 
 .texto-principal {
   justify-content: start;
-  margin: 5px;
+  line-height: 25px;
+  font-size: 18px;
+  margin: 30px 0;
 }
 
 .image-principal {
