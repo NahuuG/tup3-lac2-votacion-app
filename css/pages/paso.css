@@ -1,7 +1,29 @@
-.desplegables {
-  margin-right: 20px;
-  /* Espacio entre los select */
+.selector-filtros {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  padding: 5px;
+  color: var(--celeste);
+  font-weight: bold;
+margin-bottom: 15px;
 }
+
+.boton-filtrar {
+  padding: 5px;
+  border-radius: 15px;
+  border: 1px solid white;
+  background-color: white;
+  color: var(--textos);
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+  height: 15px;
+  margin: 0 5px 20px 5px;
+}
+
+
 
 .boton-inicio-header {
   padding: 5px;
@@ -32,40 +54,7 @@ header select {
   font-weight: bold;
 }
 
-header label {
-  color: var(--celeste);
-  font-weight: bold;
-}
 
-header ul {
-  background-color: var(--fondo-Menu);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 10px;
-  justify-content: flex-start;
-  align-items: center;
-  height: 45px;
-}
-
-header ul li {
-  list-style: none;
-}
-
-.boton-filtrar {
-  background-color: white;
-  border-radius: 15px;
-  font-family: #fff;
-  font-size: 10px;
-  text-transform: uppercase;
-  color: var(--textos);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 13px;
-  padding-right: 12px;
-  text-align: center;
-  text-decoration: none;
-}
 
 
 
