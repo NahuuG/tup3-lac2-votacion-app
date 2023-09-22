@@ -1,31 +1,29 @@
-.filtrar {
-    background-color: white;
-    border-radius: 15px;
-    padding: 5px;
-    font-family: #FFF;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--textos);
+header {
+    background-color: #e0e0e0; /* Color de fondo del header */
+    width: 100% !important;
+  }
+
+.header-page{
+    background-color: var(--fondo-Cabecera);
+    color: white;
+    padding: 0.5em;
 }
 
-.boton-inicio {
-    background-color: var(--gris-claro);
-    border-radius: 5px;
-    padding: 5px;
-    font-family: #fff;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--textos);
-    text-decoration: none;
-}
-
-.boton-inicio:hover {
-    color: var(--textos);
+.menu-header-page {
+    display: flex;
+    align-items: center;
 }
 
 .desplegables {
+    margin-right: 20px; /* Espacio entre los select */
+}
+
+.menu-header-page{
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+header select {
     background: transparent;
     border: none;
     font-size: 14px;
@@ -33,130 +31,307 @@
     padding: 5px;
     color: var(--celeste);
     font-weight: bold;
-}
-
-.texto-path {
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+  }
+  
+  header label {
     color: var(--celeste);
+    font-weight: bold;
+  }
+  
+  header ul {
+    background-color: var(--fondo-Menu);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    height: 45px;
 }
 
-.boton-agregar-informe {
+    header ul li {
+    list-style: none;
+}
+
+#lupa{
+    width: 10px;
+    padding-right: 10px;
+}
+
+.filtrar {
+    background-color: white;
+    border-radius: 15px;
+    font-family: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--textos);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 15px;
+    margin-bottom: 19px;
+    margin-left: 40px;
+    margin-top: 18px;
+    text-decoration: none;
+  }
+  
+.generales{
+    background-color: var(--celeste);
+    border-radius: 5px;
+    font-family: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 13px;
+    padding-right: 12px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-top: 18px;
+    text-decoration: none;
+}
+
+
+.boton-informes{
+    margin-bottom: 21px;
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-top: 22px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 13px;
+    padding-right: 12px;
+}
+
+
+
+  .boton-inicio {
+    background-color: var(--gris-claro);
+    border-radius: 5px;
+    font-family: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    margin-left: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    margin-right: 5px;
+    margin-top: 18px;
+  }
+
+  i {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .carteles div {
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  div p {
+    color: white;
+  }
+  
+  .carteles div:first-child {
+    background-color: var(--mensaje-usuario-verde);
+  }
+  
+  .carteles div:nth-child(2) {
+    background-color: var(--mensaje-usuario-rojo);
+  }
+  
+  .carteles div:nth-child(3) {
+    background-color: var(--mensaje-usuario-amarillo);
+  }
+  
+  .titulo {
+    width: 90%;
+    margin: auto;
+  }
+  
+  .titulo p {
+    font-size: 14px;
+    color: var(--celeste);
+  }
+  
+  .agregar-informe-boton {
     background-color: var(--gris-claro);
     color: white;
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
-    padding: 5px;
+    padding: 5px 25px;
     border-radius: 5px;
     text-transform: uppercase;
-}
-
-.boton-agregar-informe:hover {
+    border: none;
+  }
+  
+  .agregar-informe-boton:hover {
     color: var(--textos);
-}
-
-.boton-mesas-escrutadas {
-    background-color: var(--celeste);
+  }
+  
+  .main {
+    width: 90%;
+    margin: auto;
+  }
+  
+  .main main {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .main-cards {
+    display: flex;
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
     border-radius: 10px;
     margin: 15px;
-    height: 70px;
     width: 184px;
-    padding: 0.5rem 1rem;
-    font-family: #FFF;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #FFF;
-    display: grid;
-}
-
-.boton-electores {
-    background-color: var(--magenta);
-    border-radius: 10px;
-    margin: 15px;
     height: 70px;
-    width: 184px;
     padding: 0.5rem 1rem;
-    font-family: #FFF;
+    color: white;
     font-size: 12px;
-    text-transform: uppercase;
-    color: #FFF;
-}
-
-.boton-participacion-escrutados {
-    background-color: var(--morado);
-    border-radius: 10px;
-    margin: 15px;
-    height: 70px;
-    width: 184px;
-    padding: 0.5rem 1rem;
-    font-family: #FFF;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #FFF;
-}
-
-
-td {
-    border-radius: 25px;
-    border: 1px var(--borde-Grilla) solid;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
-
-th {
+  }
+  
+  .card div p {
+    color: white;
+  }
+  
+  .card div p:first-child {
     font-weight: bold;
-    padding: 1.8em 0 0 0;
+  }
+  
+  .card:first-child {
+    background-color: var(--celeste);
+  }
+  
+  .card:nth-child(2) {
+    background-color: var(--magenta);
+  }
+  
+  .card:nth-child(3) {
+    background-color: var(--morado);
+  }
+  
+  .datos {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 50px;
+    gap: 15px;
+  }
+  
+  .agrupaciones-container,
+  .mapa,
+  .chart-wrap {
+    border-radius: 25px;
+    border: 1px solid var(--borde-Grilla);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    height: 500px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    flex-grow: 1;
+    width: 30%;
+  }
+  
+  .agrupaciones-container h3 {
+    font-weight: bold;
+    padding: 1.8 rem 0 0 0;
     text-align: center;
     white-space: nowrap;
-}
-
-.cuadro-agrupacion {
-    overflow-y: scroll;
-    height: 325px;
-}
-
-.cuadro-agrupacion p {
+  }
+  
+  .separador {
+    width: 95%;
+    margin: auto;
+    border: 1px solid rgb(199, 199, 199);
+  }
+  
+  .agrupacion h3 {
+    text-align: start;
+    margin-left: 5px;
+  }
+  
+  .agrupacion-texto {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  
+  .agrupacion-texto h3 {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .agrupacion-texto p {
     font-size: 11px;
     color: var(--textos);
     padding: 5px;
     text-transform: uppercase;
     font-weight: bold;
-}
-
-p .cuadro-agrupacion {
-    font-size: 12px;
-    font-weight: bold;
-    border-bottom: 1px solid var(--borde-Grilla);
-}
-
-
-.progress {
+  }
+  
+  .mapa,
+  .chart-wrap {
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .mapa svg {
+    width: 300px;
+    height: 100%;
+  }
+  
+  /*barra de progreso*/
+  .progress {
     height: 35px;
     width: 100%;
     border-radius: 5px;
     margin-bottom: 15px;
-}
-
-.progress-bar {
+  }
+  .progress-bar {
     height: 100%;
     display: flex;
     align-items: center;
     transition: width 0.25s;
     border-radius: 5px;
-}
-
-.progress-bar-text {
+  }
+  .progress-bar-text {
     margin-left: 10px;
     font-weight: bold;
     color: var(--textos);
     font-size: 9px;
-}
-
-.cuadro-mapa {
-    text-align: center;
-    vertical-align: middle;
-}
-
-.chart-wrap {
+  }
+  
+  .mapa .chart-wrap {
     --chart-width: 260px;
     --grid-color: #aaa;
     --bar-thickness: 25px;
@@ -164,28 +339,24 @@ p .cuadro-agrupacion {
     --bar-spacing: 10px;
     font-family: sans-serif;
     width: var(--chart-width);
-}
-
-.chart-wrap .title {
+  }
+  .chart-wrap .title {
     font-weight: bold;
     padding: 1.8em 0 2.8em;
     text-align: center;
     white-space: nowrap;
-}
-
-/* cuando definimos el gráfico en horizontal, lo giramos 90 grados */
-.chart-wrap.horizontal .grid {
+  }
+  /* cuando definimos el gráfico en horizontal, lo giramos 90 grados */
+  .chart-wrap.horizontal .grid {
     transform: rotate(-90deg);
-}
-
-.chart-wrap.horizontal .bar::after {
+  }
+  .chart-wrap.horizontal .bar::after {
     /* giramos las letras para horizontal*/
     transform: rotate(45deg);
     padding-top: 0px;
     display: block;
-}
-
-.chart-wrap .grid {
+  }
+  .chart-wrap .grid {
     margin-left: 50px;
     position: relative;
     padding: 5px 0 5px 0;
@@ -193,59 +364,47 @@ p .cuadro-agrupacion {
     width: 100%;
     border-left: 2px solid var(--grid-color);
     font-size: 10px;
-}
-
-/* posicionamos el % del gráfico*/
-.chart-wrap .grid::before {
+  }
+  /* posicionamos el % del gráfico*/
+  .chart-wrap .grid::before {
     font-size: 0.8em;
     font-weight: bold;
-    content: '0%';
+    content: "0%";
     position: absolute;
     left: -0.5em;
     top: -1.5em;
-}
-
-.chart-wrap .grid::after {
+  }
+  .chart-wrap .grid::after {
     font-size: 0.8em;
     font-weight: bold;
-    content: '100%';
+    content: "100%";
     position: absolute;
     right: -1.5em;
     top: -1.5em;
-}
-
-/* giramos las valores de 0% y 100% para horizontal */
-.chart-wrap.horizontal .grid::before,
-.chart-wrap.horizontal .grid::after {
+  }
+  /* giramos las valores de 0% y 100% para horizontal */
+  .chart-wrap.horizontal .grid::before,
+  .chart-wrap.horizontal .grid::after {
     transform: rotate(90deg);
-}
-
-.chart-wrap .bar {
+  }
+  /* LAS VARIABLES PARA DARLE ESTILO A LAS BARRAS NO EXISTEN!!, POR ESO NO SE VEN COMO DEBERIAN */
+  .chart-wrap .bar {
     width: var(--bar-value);
     height: var(--bar-thickness);
     margin: var(--bar-spacing) 0;
-    background-color: var(--bar-color);
+    background-color: var(--celeste);
     border-radius: 0 var(--bar-rounded) var(--bar-rounded) 0;
-}
-
-.chart-wrap .bar:hover {
+    margin: 10px 0;
+  }
+  
+  .chart-wrap .bar:hover {
     opacity: 0.7;
-}
-
-.chart-wrap .bar::after {
+  }
+  .chart-wrap .bar::after {
     content: attr(data-name);
     margin-left: 100%;
     padding: 10px;
     display: inline-block;
     white-space: nowrap;
-}
-
-.cuadros-agrupaciones {
-    display: flex;
-    justify-content: space-between;
-}
-
-.tres-botones {
-    display: flex;
-    justify-content: center;
-}
+  }
+  
