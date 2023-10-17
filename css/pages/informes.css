@@ -7,6 +7,7 @@
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
+  line-height: 15px;
   width: 80px;
   height: 15px;
   margin: 0 5px 20px 5px;
@@ -27,6 +28,7 @@
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
+  line-height: 15px;
 }
 
 .menu-header-page .boton-paso:hover {
@@ -42,6 +44,7 @@
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
+  line-height: 15px;
 }
 
 .menu-header-page .boton-generales:hover {

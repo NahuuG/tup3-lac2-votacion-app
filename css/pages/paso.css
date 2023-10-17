@@ -67,6 +67,7 @@ header select {
   padding-right: 12px;
   text-align: center;
   text-decoration: none;
+  line-height: 15px;
 }
 
 
@@ -80,6 +81,7 @@ header select {
   text-align: center;
   color: white;
   text-decoration: none;
+  line-height: 15px;
   margin-left: auto;
   padding-left: 25px;
   padding-right: 25px;
@@ -199,7 +201,7 @@ div p {
   border: 1px solid var(--borde-Grilla);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   height: 500px;
-  overflow-y: scroll;
+
   display: flex;
   flex-direction: column;
   padding: 5px;
@@ -207,7 +209,11 @@ div p {
   width: 30%;
 }
 
-.agrupaciones-container h3 {
+.agrupaciones {
+  overflow-y: scroll;
+}
+
+.titulo-container h3 {
   font-weight: bold;
   padding: 1.8 rem 0 0 0;
   text-align: center;
