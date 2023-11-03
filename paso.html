@@ -13,6 +13,7 @@
   <!-- Estilos CSS -->
   <link rel="stylesheet" href="css/common.css" />
   <link rel="stylesheet" href="css/pages/paso.css" />
+  <script src="js/pages/paso.js" defer></script>
 </head>
 
 <body>
@@ -27,29 +28,26 @@
     <!--Barra de menú principal-->
     <div class="menu-header-page">
       <div class="selector-filtros">
-        <select id="seleccion-año" name="seleccion-año" class="desplegables">
-          <option value="" disabled selected>Año</option>
-          <option value="2023">2023</option>
-          <option value="2022">2022</option>
-          <option value="2021">2021</option>
+        <select id="seleccion-año" name="seleccion-año" class="desplegables" onchange="seleccionAño(event)">
+          <option value="0">Año</option>
         </select>
 
-        <select id="seleccion-cargo" name="seleccion-cargo" class="desplegables">
-          <option value="" disabled selected>Cargo</option>
-          <option value="2023">Diputado</option>
-          <option value="2022">Diputado</option>
-          <option value="2021">Senador</option>
+        <select id="seleccion-cargo" name="seleccion-cargo" class="desplegables" onchange="obtenerCargo(event)">
+          <option value="0">Cargo</option>
         </select>
 
-        <select id="seleccion-distrito" name="seleccion-distrito" class="desplegables">
-          <option value="" disabled selected>Distrito</option>
-          <option value="2023">Centro</option>
-          <option value="2022">Sur</option>
-          <option value="2021">Norte</option>
+        <select id="seleccion-distrito" name="seleccion-distrito" class="desplegables" onchange="obtenerDistrito(event)">
+          <option value="0">Distrito</option>
+        </select>
+
+        <input type="hidden" id="hdSeccionProvincial" name="hdSeccionProvincial">
+
+        <select id="seleccion-seccion" name="seleccion-seccion" class="desplegables" onchange="obtenerSeccion(event)">
+          <option value="0">Sección</option>
         </select>
       </div>
 
-      <a class="boton-filtrar" href="#"><i class="fas fa-magnifying-glass"></i>Filtrar</a>
+      <a id="boton-filtrar" class="boton-filtrar" href="#" onclick="filtrarDatos()"><i class="fas fa-magnifying-glass"></i>Filtrar</a>
       <a href="generales.html" class="boton-generales-header">Generales</a>
       <a class="boton-informes" href="informes.html">Informes</a>
       <a class="boton-inicio-header" href="index.html">Inicio</a>
@@ -64,16 +62,16 @@
       <p class="mensaje-incompleto"><i class="fas fa-exclamation"></i>La operacion no se pudo completar.</p>
     </section>
     <section class="titulo">
-      <h1>Elecciones 2021 | Paso</h1>
-      <p class="texto-path">
-        2020 > Paso > Provisorio > Senadores Nacionales > Buenos Aires
-      </p>
+      <h1 id="titulo-principal">Elecciones - PASO</h1>
+      <div class="texto-path">
+        <p id="subtitulo"></p>
+      </div>
     </section>
     <section class="main">
       <main>
         <button class="agregar-informe-boton">+ AGREGAR A INFORME</button>
         <div class="main-cards">
-          <div class="card">
+          <div class="card" id="mesas-escrutadas">
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
               x="0px" y="0px" width="841.889px" height="595.281px" viewBox="0 0 841.889 595.281"
               enable-background="new 0 0 841.889 595.281" xml:space="preserve" class="v-icon__component theme--light"
@@ -95,7 +93,7 @@
               <p>62.71%</p>
             </div>
           </div>
-          <div class="card">
+          <div class="card" id="electores">
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
               x="0px" y="0px" width="841.889px" height="595.281px" viewBox="0 0 841.889 595.281"
               enable-background="new 0 0 841.889 595.281" xml:space="preserve" class="v-icon__component theme--light"
@@ -117,7 +115,7 @@
               <p>62.71%</p>
             </div>
           </div>
-          <div class="card">
+          <div class="card" id="participacion">
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
               x="0px" y="0px" width="841.889px" height="595.281px" viewBox="0 0 841.889 595.281"
               enable-background="new 0 0 841.889 595.281" xml:space="preserve" class="v-icon__component theme--light"
