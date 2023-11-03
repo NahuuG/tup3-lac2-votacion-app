@@ -285,7 +285,7 @@ selectDistrito.addEventListener(
 selectSeccion.addEventListener("change", actualizarInformacionTituloYSubtitulo);
 
 function actualizarInformacionTituloYSubtitulo() {
-  var tipoEleccion = "PASO";
+  var tipoEleccion = "Generales";
   var selectAnioValue = selectAnio.value;
   var selectCargoValue = selectCargo.options[selectCargo.selectedIndex].text;
   var selectDistritoValue =
