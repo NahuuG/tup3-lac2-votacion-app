@@ -233,3 +233,15 @@ footer img {
 .mensaje-incompleto i {
   margin-right: 10px;
 }
+
+.mensaje-inicio {
+  width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  background-color: var(--grafica-amarillo);
+}

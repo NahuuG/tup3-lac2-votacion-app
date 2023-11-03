@@ -8,7 +8,7 @@
 
   <script src="https://kit.fontawesome.com/d0631d71b8.js" crossorigin="anonymous"></script>
   <link rel="shortcut icon" type="image/png"
-    href="https://raw.githubusercontent.com/NahuuG/tup3-lac2-votacion-app/main/img/icons/favicon-16x16.png">
+    href="https://raw.githubusercontent.com/NahuuG/tup3-lac2-votacion-app/main/img/icons/favicon-16x16.png" />
 
   <!-- Estilos CSS -->
   <link rel="stylesheet" href="css/common.css" />
@@ -22,7 +22,7 @@
     <div class="header-page">
       <div class="ancho-header">
         <a href="index.html"><img src="img/icons/Logo_DINE_negativo.a88f983e.png" alt="logo" class="logo"
-            width="150px"></a>
+            width="150px" /></a>
       </div>
     </div>
     <!--Barra de menú principal-->
@@ -36,18 +36,20 @@
           <option value="0">Cargo</option>
         </select>
 
-        <select id="seleccion-distrito" name="seleccion-distrito" class="desplegables" onchange="obtenerDistrito(event)">
+        <select id="seleccion-distrito" name="seleccion-distrito" class="desplegables"
+          onchange="obtenerDistrito(event)">
           <option value="0">Distrito</option>
         </select>
 
-        <input type="hidden" id="hdSeccionProvincial" name="hdSeccionProvincial">
+        <input type="hidden" id="hdSeccionProvincial" name="hdSeccionProvincial" />
 
         <select id="seleccion-seccion" name="seleccion-seccion" class="desplegables" onchange="obtenerSeccion(event)">
           <option value="0">Sección</option>
         </select>
       </div>
 
-      <a id="boton-filtrar" class="boton-filtrar" href="#" onclick="filtrarDatos()"><i class="fas fa-magnifying-glass"></i>Filtrar</a>
+      <a id="boton-filtrar" class="boton-filtrar" href="#" onclick="filtrarDatos()"><i
+          class="fas fa-magnifying-glass"></i>Filtrar</a>
       <a href="generales.html" class="boton-generales-header">Generales</a>
       <a class="boton-informes" href="informes.html">Informes</a>
       <a class="boton-inicio-header" href="index.html">Inicio</a>
@@ -57,20 +59,36 @@
   <main>
     <section id="sec-messages">
       <!-- Mensajes de error o éxito -->
-      <p class="mensaje-exito"><i class="fas fa-thumbs-up"></i>Operación completada con éxito.</p>
-      <p class="mensaje-error"><i class="fas fa-exclamation-triangle"></i>Se produjo un error en la operación.</p>
-      <p class="mensaje-incompleto"><i class="fas fa-exclamation"></i>La operacion no se pudo completar.</p>
-    </section>
-    <section class="titulo">
-      <h1 id="titulo-principal">Elecciones | PASO</h1>
-      <div class="texto-path">
-        <p id="subtitulo"></p>
+      <div id="sector-mensajes">
+        <p class="mensaje-exito">
+          <i class="fas fa-thumbs-up"></i>Operación completada con éxito.
+        </p>
+        <p class="mensaje-error">
+          <i class="fas fa-exclamation-triangle"></i>Se produjo un error en la
+          operación.
+        </p>
+        <p class="mensaje-incompleto">
+          <i class="fas fa-exclamation"></i>La operacion no se pudo completar.
+        </p>
       </div>
     </section>
+    <section class="titulo">
+      <div class="mensaje-inicio" id="mensaje-inicio">
+        Debe seleccionar los valores a filtrar y hacer clic en el botón FILTRAR
+      </div>
+      <div id="sector-titulos">
+        <h1 id="titulo-principal">Elecciones | PASO</h1>
+        <div class="texto-path">
+          <p id="subtitulo"></p>
+        </div>
+      </div>
+    </section>
+
     <section class="main">
       <main>
-        <button class="agregar-informe-boton">+ AGREGAR A INFORME</button>
-        <div class="main-cards">
+        <button class="agregar-informe-boton" id="agregar-informe-boton">+ AGREGAR A INFORME</button>
+        
+        <div class="main-cards" id="main-cards">
           <div class="card" id="mesas-escrutadas">
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
               x="0px" y="0px" width="841.889px" height="595.281px" viewBox="0 0 841.889 595.281"
@@ -140,8 +158,9 @@
         </div>
       </main>
     </section>
+
     <section class="datos">
-      <div class="agrupaciones-container">
+      <div class="agrupaciones-container" id="agrupaciones-container">
         <div class="titulo-container">
           <h3>Agrupaciones políticas</h3>
         </div>
@@ -207,7 +226,7 @@
           </div>
         </div>
       </div>
-      <div class="mapa">
+      <div class="mapa" id="mapa">
         <h3>Buenos Aires</h3>
         <svg>
           <path class="leaflet-interactive" stroke="#18a0fb" stroke-opacity="1" stroke-width="2" stroke-linecap="round"
@@ -216,7 +235,7 @@
           </path>
         </svg>
       </div>
-      <div class="chart-wrap horizontal">
+      <div class="chart-wrap horizontal" id="chart-wrap">
         <div class="title">Resumen de votos</div>
         <div class="grid">
           <div class="bar" style="--bar-value: 85%" data-name="Partido 1" title="Your Blog 85%"></div>
@@ -235,18 +254,20 @@
   <footer>
     <div class="footer-content">
       <div class="images-footer">
-        <img src="img/icons/Ministerio-del-Interior_pluma.1ab9a7a7.png" alt="Logo de Argentina">
-        <img src="img/icons/Logo_DINE_negativo.a88f983e.png" alt="Logo de observatorio">
-        <img src="img/icons/logos_001-10.4430c8d5.png" alt="Direcciona Nacional Electoral">
+        <img src="img/icons/Ministerio-del-Interior_pluma.1ab9a7a7.png" alt="Logo de Argentina" />
+        <img src="img/icons/Logo_DINE_negativo.a88f983e.png" alt="Logo de observatorio" />
+        <img src="img/icons/logos_001-10.4430c8d5.png" alt="Direcciona Nacional Electoral" />
       </div>
 
       <div class="texto-footer">
-        <p>Resultados Provisorios en base a telegramas recibidos (Art. 43 Ley 26571 y Art. 105 Ley 19945). Los
-          porcentajes de las agrupaciones políticas son calculados sobre los votos válidos (PASO) conforme al
-          art.
-          45 Ley 26.571 y afirmativos (Generales). No se incluyen los votos correspondientes a los electores
-          residentes en el exterior ni privados de la libertad. Al usar este sitio usted acepta los <a href=""
-            style="color: var(--texto-footer);text-decoration: none;">Términos y Condiciones</a>
+        <p>
+          Resultados Provisorios en base a telegramas recibidos (Art. 43 Ley
+          26571 y Art. 105 Ley 19945). Los porcentajes de las agrupaciones
+          políticas son calculados sobre los votos válidos (PASO) conforme al
+          art. 45 Ley 26.571 y afirmativos (Generales). No se incluyen los
+          votos correspondientes a los electores residentes en el exterior ni
+          privados de la libertad. Al usar este sitio usted acepta los
+          <a href="" style="color: var(--texto-footer); text-decoration: none">Términos y Condiciones</a>
         </p>
       </div>
     </div>

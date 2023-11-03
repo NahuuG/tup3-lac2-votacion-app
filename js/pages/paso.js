@@ -24,7 +24,7 @@ async function fetchDatos() {
 }
 
 function cargarAños(años) {
-  var selectElement = document.getElementById("seleccion-año");
+  let selectElement = document.getElementById("seleccion-año");
 
   let selectHTML = '<option value="0">Año</option>';
 
@@ -46,7 +46,7 @@ fetchDatos()
   });
 
 function seleccionAño(event) {
-  var añoSeleccionado = event.target.value;
+  let añoSeleccionado = event.target.value; // Asigno el elemento del evento
 
   if (añoSeleccionado && añoSeleccionado != 0) {
     // Verifico que no es nulo
@@ -129,13 +129,13 @@ function mostrarDistritos(distritos) {
   const placeHolderVacio = document.createElement("option");
   placeHolderVacio.value = valorDistritoVacio;
   placeHolderVacio.text = "Distrito";
-  selectElement.appendChild(placeHolderVacio);
+  selectElement.appendChild(placeHolderVacio); // Genero un primer valor vacio
 
   distritos.forEach((distrito) => {
-    const opcionDistricto = document.createElement("option");
-    opcionDistricto.value = distrito.IdDistrito;
-    opcionDistricto.text = distrito.Distrito;
-    selectElement.appendChild(opcionDistricto);
+    const opcionDistrito = document.createElement("option");
+    opcionDistrito.value = distrito.IdDistrito;
+    opcionDistrito.text = distrito.Distrito;
+    selectElement.appendChild(opcionDistrito);
   });
 }
 
@@ -168,10 +168,6 @@ function obtenerDistrito(event) {
   }
 }
 
-// Arreglo general de todas las secciones a mostrar
-// - conseguir el arreglo de secciones a partir del arreglo de seccionesProvinciales
-// - cuando elegis una seccion ir a buscar en seccionesGlobal el id provincial
-
 function mostrarSecciones(secciones) {
   let selectElement = document.getElementById("seleccion-seccion");
   selectElement.innerHTML = null; // Limpio opciones anteriores
@@ -199,7 +195,7 @@ function obtenerSeccion(event) {
 
   const idSeccionProvincial = seccionesGlobal.find((secProv) => {
     const existeSeccion = secProv.Secciones.some(
-      (seccion) => seccion.IdSeccion === idSeccion // ARREGLO
+      (seccion) => seccion.IdSeccion === idSeccion
     );
     return existeSeccion;
   }).IDSeccionProvincial;
@@ -211,9 +207,6 @@ function obtenerSeccion(event) {
   let selectElement = document.getElementById("hdSeccionProvincial");
   selectElement.value = idSeccionProvincial; // Asigno el valor
 }
-
-var botonFiltrar = document.getElementById("boton-filtrar");
-botonFiltrar.addEventListener("click", filtrarDatos);
 
 async function filtrarDatos() {
   // Obtener los valores de los campos de selección
@@ -247,7 +240,7 @@ async function filtrarDatos() {
   // https://resultados.mininterior.gob.ar/api/resultados/getResultados?anioEleccion=2019&tipoRecuento=1&tipoEleccion=2&categoriaId=2
 
   // Construir la URL con los valores de los campos
-  var url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=${seccionProvincialId}&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`;
+  let url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=${seccionProvincialId}&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`;
 
   try {
     const response = await fetch(url);
@@ -266,31 +259,74 @@ async function filtrarDatos() {
   }
 }
 
+const botonFiltrar = document.getElementById("boton-filtrar");
+
+const mensajeExito = document.querySelector(".mensaje-exito");
+const mensajeError = document.querySelector(".mensaje-error");
+const mensajeIncompleto = document.querySelector(".mensaje-incompleto");
+
+mensajeExito.style.display = "none";
+mensajeError.style.display = "none";
+mensajeIncompleto.style.display = "none";
+
+// Función para mostrar un mensaje específico
+function mostrarMensaje(tipoMensaje) {
+  tipoMensaje.style.display = "block";
+}
+
+// Ocultar sectores antes de presionar filtrar
+const sectorTitulos = document.getElementById("sector-titulos");
+const agregarInforme = document.getElementById("agregar-informe-boton");
+const cartasPrincipales = document.getElementById("main-cards");
+const agrupacionesContainer = document.getElementById("agrupaciones-container");
+const mapa = document.getElementById("mapa");
+const chartWrap = document.getElementById("chart-wrap");
+
+const displayOriginal = {
+  sectorTitulos: sectorTitulos.style.display,
+  agregarInforme: agregarInforme.style.display,
+  cartasPrincipales: cartasPrincipales.style.display,
+  agrupacionesContainer: agrupacionesContainer.style.display,
+  mapa: mapa.style.display,
+  chartWrap: chartWrap.style.display,
+};
+
+sectorTitulos.style.display = "none";
+agregarInforme.style.display = "none";
+cartasPrincipales.style.display = "none";
+agrupacionesContainer.style.display = "none";
+mapa.style.display = "none";
+chartWrap.style.display = "none";
+
+var mensajeInicioFiltrar = document.getElementById("mensaje-inicio");
+
 botonFiltrar.addEventListener("click", function () {
+  filtrarDatos();
+  mensajeInicioFiltrar.style.display = "none";
+
+  sectorTitulos.style.display = displayOriginal.sectorTitulos;
+  agregarInforme.style.display = displayOriginal.agregarInforme;
+  cartasPrincipales.style.display = displayOriginal.cartasPrincipales;
+  agrupacionesContainer.style.display = displayOriginal.agrupacionesContainer;
+  mapa.style.display = displayOriginal.mapa;
+  chartWrap.style.display = displayOriginal.chartWrap;
+
   // Llama a la función para actualizar el título y el subtítulo
   actualizarInformacionTituloYSubtitulo();
 });
 
-var selectAnio = document.getElementById("seleccion-año");
-var selectCargo = document.getElementById("seleccion-cargo");
-var selectDistrito = document.getElementById("seleccion-distrito");
-var selectSeccion = document.getElementById("seleccion-seccion");
-
-selectAnio.addEventListener("change", actualizarInformacionTituloYSubtitulo);
-selectCargo.addEventListener("change", actualizarInformacionTituloYSubtitulo);
-selectDistrito.addEventListener(
-  "change",
-  actualizarInformacionTituloYSubtitulo
-);
-selectSeccion.addEventListener("change", actualizarInformacionTituloYSubtitulo);
+const selectAnio = document.getElementById("seleccion-año");
+const selectCargo = document.getElementById("seleccion-cargo");
+const selectDistrito = document.getElementById("seleccion-distrito");
+const selectSeccion = document.getElementById("seleccion-seccion");
 
 function actualizarInformacionTituloYSubtitulo() {
-  var tipoEleccion = "PASO";
-  var selectAnioValue = selectAnio.value;
-  var selectCargoValue = selectCargo.options[selectCargo.selectedIndex].text;
-  var selectDistritoValue =
+  let tipoEleccion = "PASO";
+  let selectAnioValue = selectAnio.value;
+  let selectCargoValue = selectCargo.options[selectCargo.selectedIndex].text;
+  let selectDistritoValue =
     selectDistrito.options[selectDistrito.selectedIndex].text;
-  var selectSeccionValue =
+  let selectSeccionValue =
     selectSeccion.options[selectSeccion.selectedIndex].text;
 
   // Actualizar los elementos con el título y subtítulo
