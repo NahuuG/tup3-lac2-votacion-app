@@ -10,6 +10,7 @@
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/pages/generales.css" />
+    <script src="js/pages/general.js" defer></script>
 </head>
 
 <body>
@@ -24,33 +25,30 @@
         <!--Barra de menú principal-->
         <div class="menu-header-page">
             <div class="selector-filtros">
-                <select id="seleccion-año" name="seleccion-año" class="desplegables">
-                    <option value="" disabled selected>Año</option>
-                    <option value="2023">2023</option>
-                    <option value="2022">2022</option>
-                    <option value="2021">2021</option>
-                </select>
-
-                <select id="seleccion-cargo" name="seleccion-cargo" class="desplegables">
-                    <option value="" disabled selected>Cargo</option>
-                    <option value="2023">Diputado</option>
-                    <option value="2022">Diputado</option>
-                    <option value="2021">Senador</option>
-                </select>
-
-                <select id="seleccion-distrito" name="seleccion-distrito" class="desplegables">
-                    <option value="" disabled selected>Distrito</option>
-                    <option value="2023">Centro</option>
-                    <option value="2022">Sur</option>
-                    <option value="2021">Norte</option>
-                </select>
+              <select id="seleccion-año" name="seleccion-año" class="desplegables" onchange="seleccionAño(event)">
+                <option value="0">Año</option>
+              </select>
+      
+              <select id="seleccion-cargo" name="seleccion-cargo" class="desplegables" onchange="obtenerCargo(event)">
+                <option value="0">Cargo</option>
+              </select>
+      
+              <select id="seleccion-distrito" name="seleccion-distrito" class="desplegables" onchange="obtenerDistrito(event)">
+                <option value="0">Distrito</option>
+              </select>
+      
+              <input type="hidden" id="hdSeccionProvincial" name="hdSeccionProvincial">
+      
+              <select id="seleccion-seccion" name="seleccion-seccion" class="desplegables" onchange="obtenerSeccion(event)">
+                <option value="0">Sección</option>
+              </select>
             </div>
-
-            <a class="boton-filtrar" href="#"><i class="fas fa-magnifying-glass"></i>Filtrar</a>
+      
+            <a id="boton-filtrar" class="boton-filtrar" href="#" onclick="filtrarDatos()"><i class="fas fa-magnifying-glass"></i>Filtrar</a>
             <a href="paso.html" class="boton-paso-header">Paso</a>
             <a class="boton-informes" href="informes.html">Informes</a>
             <a class="boton-inicio-header" href="index.html">Inicio</a>
-        </div>
+          </div>
     </header>
     <!-- Contenido principal de la página -->
     <main>
@@ -63,11 +61,11 @@
                 <p class="mensaje-incompleto"><i class="fas fa-exclamation"></i>La operacion no se pudo completar.</p>
             </section>
             <section class="titulo">
-                <h1>Elecciones 2021 | Generales</h1>
-                <p class="texto-path">
-                    2020 > Paso > Provisorio > Senadores Nacionales > Buenos Aires
-                </p>
-            </section>
+                <h1 id="titulo-principal">Elecciones - Generales</h1>
+                <div class="texto-path">
+                  <p id="subtitulo"></p>
+                </div>
+              </section>
             <section class="main">
                 <main>
                     <button class="agregar-informe-boton">+ AGREGAR A INFORME</button>
