@@ -5,10 +5,10 @@ var cargosGlobal = [];
 var distritosGlobal = [];
 var seccionesGlobal = [];
 const valorDistritoVacio = "Distrito";
-var seleccionDeAño = document.getElementById("seleccion-año");
-var seleccionDeCargo = document.getElementById("seleccion-cargo");
-var seleccionDeDistrito = document.getElementById("seleccion-distrito");
-var seleccionDeSeccion = document.getElementById("seleccion-seccion");
+const seleccionDeAño = document.getElementById("seleccion-año");
+const seleccionDeCargo = document.getElementById("seleccion-cargo");
+const seleccionDeDistrito = document.getElementById("seleccion-distrito");
+const seleccionDeSeccion = document.getElementById("seleccion-seccion");
 
 async function fetchDatos() {
   try {
@@ -351,23 +351,17 @@ botonFiltrar.addEventListener("click", async function () {
   } catch (error) {
     console.error("Error:", error);
   }
-
-  // Ocultar elementos
 });
-
-const selectAnio = document.getElementById("seleccion-año");
-const selectCargo = document.getElementById("seleccion-cargo");
-const selectDistrito = document.getElementById("seleccion-distrito");
-const selectSeccion = document.getElementById("seleccion-seccion");
 
 function actualizarInformacionTituloYSubtitulo() {
   let tipoEleccion = "PASO";
-  let selectAnioValue = selectAnio.value;
-  let selectCargoValue = selectCargo.options[selectCargo.selectedIndex].text;
+  let selectAnioValue = seleccionDeAño.value;
+  let selectCargoValue =
+    seleccionDeCargo.options[seleccionDeCargo.selectedIndex].text;
   let selectDistritoValue =
-    selectDistrito.options[selectDistrito.selectedIndex].text;
+    seleccionDeDistrito.options[seleccionDeDistrito.selectedIndex].text;
   let selectSeccionValue =
-    selectSeccion.options[selectSeccion.selectedIndex].text;
+    seleccionDeSeccion.options[seleccionDeSeccion.selectedIndex].text;
 
   // Actualizar los elementos con el título y subtítulo
   document.getElementById(
