@@ -38,17 +38,17 @@
 
         <select id="seleccion-distrito" name="seleccion-distrito" class="desplegables"
           onchange="obtenerDistrito(event)">
-          <option value="0">Distrito</option>
+          <option value="Distrito">Distrito</option>
         </select>
 
         <input type="hidden" id="hdSeccionProvincial" name="hdSeccionProvincial" />
 
         <select id="seleccion-seccion" name="seleccion-seccion" class="desplegables" onchange="obtenerSeccion(event)">
-          <option value="0">Sección</option>
+          <option value="Sección vacia">Sección</option>
         </select>
       </div>
 
-      <a id="boton-filtrar" class="boton-filtrar" href="#" onclick="filtrarDatos()"><i
+      <a id="boton-filtrar" class="boton-filtrar" href="#"><i
           class="fas fa-magnifying-glass"></i>Filtrar</a>
       <a href="generales.html" class="boton-generales-header">Generales</a>
       <a class="boton-informes" href="informes.html">Informes</a>
@@ -73,15 +73,16 @@
       </div>
     </section>
     <section class="titulo">
-      <div class="mensaje-inicio" id="mensaje-inicio">
-        Debe seleccionar los valores a filtrar y hacer clic en el botón FILTRAR
-      </div>
       <div id="sector-titulos">
         <h1 id="titulo-principal">Elecciones | PASO</h1>
         <div class="texto-path">
           <p id="subtitulo"></p>
         </div>
       </div>
+      <div class="mensaje-inicio" id="mensaje-inicio">
+        
+      </div>
+      
     </section>
 
     <section class="main">
@@ -106,9 +107,9 @@
                 </path>
               </g>
             </svg>
-            <div>
+            <div >
               <p>Mesas Escrutadas</p>
-              <p>62.71%</p>
+              <p id="mesas-escrutadas-porcentaje"></p>
             </div>
           </div>
           <div class="card" id="electores">
@@ -130,7 +131,7 @@
             </svg>
             <div>
               <p>Electores</p>
-              <p>62.71%</p>
+              <p id="electores-porcentaje"></p>
             </div>
           </div>
           <div class="card" id="participacion">
@@ -152,7 +153,7 @@
             </svg>
             <div>
               <p>Participacion sobre escrutado</p>
-              <p>62.71%</p>
+              <p id="participacion-porcentaje"></p>
             </div>
           </div>
         </div>

@@ -5,6 +5,10 @@ var cargosGlobal = [];
 var distritosGlobal = [];
 var seccionesGlobal = [];
 const valorDistritoVacio = "Distrito";
+var seleccionDeAño = document.getElementById("seleccion-año");
+var seleccionDeCargo = document.getElementById("seleccion-cargo");
+var seleccionDeDistrito = document.getElementById("seleccion-distrito");
+var seleccionDeSeccion = document.getElementById("seleccion-seccion");
 
 async function fetchDatos() {
   try {
@@ -39,7 +43,6 @@ function cargarAños(años) {
 fetchDatos()
   .then((años) => {
     cargarAños(años);
-    console.log(años);
   })
   .catch((error) => {
     console.error("Error:", error);
@@ -208,6 +211,10 @@ function obtenerSeccion(event) {
   selectElement.value = idSeccionProvincial; // Asigno el valor
 }
 
+var mesasEscrutadas = "";
+var electores = "";
+var participacionSobreEscrutado = "";
+
 async function filtrarDatos() {
   // Obtener los valores de los campos de selección
   var anioEleccion = document.getElementById("seleccion-año").value;
@@ -251,11 +258,24 @@ async function filtrarDatos() {
 
     const data = await response.json();
 
+    // Obtengo datos para cuadros
+    mesasEscrutadas = data.estadoRecuento.mesasTotalizadas;
+    electores = data.estadoRecuento.cantidadElectores;
+    participacionSobreEscrutado = data.estadoRecuento.participacionPorcentaje;
+
+    console.log(
+      "Mesas totalizadas:",
+      mesasEscrutadas,
+      "Electores:",
+      electores,
+      "Participacion sobre escrutado:",
+      participacionSobreEscrutado
+    );
+
     // Si la respuesta fue correcta, imprimir en la consola
     console.log("Resultados obtenidos: ", data);
   } catch (error) {
-    // Mostrar un mensaje de error en rojo con el detalle del error
-    mostrarMensajeError(`Error: ${error.message}`);
+    console.error(`Error: ${error.message}`);
   }
 }
 
@@ -268,11 +288,6 @@ const mensajeIncompleto = document.querySelector(".mensaje-incompleto");
 mensajeExito.style.display = "none";
 mensajeError.style.display = "none";
 mensajeIncompleto.style.display = "none";
-
-// Función para mostrar un mensaje específico
-function mostrarMensaje(tipoMensaje) {
-  tipoMensaje.style.display = "block";
-}
 
 // Ocultar sectores antes de presionar filtrar
 const sectorTitulos = document.getElementById("sector-titulos");
@@ -299,20 +314,45 @@ mapa.style.display = "none";
 chartWrap.style.display = "none";
 
 var mensajeInicioFiltrar = document.getElementById("mensaje-inicio");
+mensajeInicioFiltrar.textContent =
+  "Debe seleccionar los valores a filtrar y hacer clic en el botón FILTRAR";
 
-botonFiltrar.addEventListener("click", function () {
-  filtrarDatos();
+function volverVisiblesMensajes() {
   mensajeInicioFiltrar.style.display = "none";
-
   sectorTitulos.style.display = displayOriginal.sectorTitulos;
   agregarInforme.style.display = displayOriginal.agregarInforme;
   cartasPrincipales.style.display = displayOriginal.cartasPrincipales;
   agrupacionesContainer.style.display = displayOriginal.agrupacionesContainer;
   mapa.style.display = displayOriginal.mapa;
   chartWrap.style.display = displayOriginal.chartWrap;
+}
 
-  // Llama a la función para actualizar el título y el subtítulo
-  actualizarInformacionTituloYSubtitulo();
+botonFiltrar.addEventListener("click", async function () {
+  // Validaciones iniciales
+
+  if (
+    seleccionDeAño.value == "0" ||
+    seleccionDeCargo.value == "0" ||
+    seleccionDeDistrito.value == "Distrito" ||
+    seleccionDeSeccion.value == "Sección vacia" ||
+    mesasEscrutadas == "0"
+  ) {
+    sectorTitulos.style.display = displayOriginal.sectorTitulos;
+    mensajeInicioFiltrar.textContent = "Error: ERROR?";
+    mensajeInicioFiltrar.style.backgroundColor = "red";
+    return; // Salir de la función si las validaciones fallan
+  }
+
+  try {
+    await filtrarDatos();
+    actualizarInformacionTituloYSubtitulo();
+    volverVisiblesMensajes();
+    mostrarInformacionCuadros();
+  } catch (error) {
+    console.error("Error:", error);
+  }
+
+  // Ocultar elementos
 });
 
 const selectAnio = document.getElementById("seleccion-año");
@@ -338,20 +378,11 @@ function actualizarInformacionTituloYSubtitulo() {
   ).textContent = `${selectAnioValue} > ${tipoEleccion} > ${selectCargoValue} > ${selectDistritoValue} > ${selectSeccionValue}`;
 }
 
-async function mostrarInformacionCuadros(coloresData) {
-  try {
-    // Actualizar elementos con la información
-    document.getElementById("mesas-escrutadas").textContent = mesasEscrutadas;
-    document.getElementById("electores").textContent = electores;
-    document.getElementById("participacion").textContent = participacion + "%";
-
-    // Ocultar mensajes y mostrar cuadros de colores
-    document.getElementById("mensaje-amarillo").style.display = "none";
-    document.getElementById("mensaje-error").style.display = "none";
-    document.getElementById("cuadros-colores").style.display = "block";
-  } catch (error) {
-    mostrarMensajeError(
-      "Error al mostrar la información de los cuadros de colores."
-    );
-  }
+function mostrarInformacionCuadros() {
+  // Actualizar elementos con la información
+  document.getElementById("mesas-escrutadas-porcentaje").textContent =
+    mesasEscrutadas;
+  document.getElementById("electores-porcentaje").textContent = electores;
+  document.getElementById("participacion-porcentaje").textContent =
+    participacionSobreEscrutado + "%";
 }
