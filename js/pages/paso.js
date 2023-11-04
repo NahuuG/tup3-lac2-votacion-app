@@ -10,6 +10,10 @@ const seleccionDeCargo = document.getElementById("seleccion-cargo");
 const seleccionDeDistrito = document.getElementById("seleccion-distrito");
 const seleccionDeSeccion = document.getElementById("seleccion-seccion");
 
+var mesasEscrutadas = "";
+var electores = "";
+var participacionSobreEscrutado = "";
+
 async function fetchDatos() {
   try {
     // Solicitud a la URL
@@ -211,10 +215,6 @@ function obtenerSeccion(event) {
   selectElement.value = idSeccionProvincial; // Asigno el valor
 }
 
-var mesasEscrutadas = "";
-var electores = "";
-var participacionSobreEscrutado = "";
-
 async function filtrarDatos() {
   // Obtener los valores de los campos de selección
   var anioEleccion = document.getElementById("seleccion-año").value;
@@ -380,3 +380,5 @@ function mostrarInformacionCuadros() {
   document.getElementById("participacion-porcentaje").textContent =
     participacionSobreEscrutado + "%";
 }
+
+function actualizarMapa() {}

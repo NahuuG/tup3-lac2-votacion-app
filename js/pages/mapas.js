@@ -1,5 +1,6 @@
 const provincias = [
   {
+    idDistrito: 2,
     provincia: "Buenos Aires",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -10,6 +11,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 1,
     provincia: "Ciudad Autónoma de Buenos Aires",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -20,6 +22,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 3,
     provincia: "Catamarca",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -30,6 +33,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 6,
     provincia: "Chaco",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -40,6 +44,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 7,
     provincia: "Chubut",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -51,6 +56,7 @@ const provincias = [
     `,
   },
   {
+    idDistrito: 4,
     provincia: "Córdoba",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -61,6 +67,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 5,
     provincia: "Corrientes",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -71,6 +78,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 8,
     provincia: "Entre Ríos",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -81,6 +89,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 9,
     provincia: "Formosa",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -91,6 +100,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 10,
     provincia: "Jujuy",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -102,6 +112,7 @@ const provincias = [
     `,
   },
   {
+    idDistrito: 11,
     provincia: "La Pampa",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -112,6 +123,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 12,
     provincia: "La Rioja",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -122,6 +134,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 13,
     provincia: "Mendoza",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -132,6 +145,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 14,
     provincia: "Misiones",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -142,6 +156,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 15,
     provincia: "Neuquén",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
