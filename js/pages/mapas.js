@@ -167,6 +167,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 16,
     provincia: "Río Negro",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -177,6 +178,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 17,
     provincia: "Salta",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -187,6 +189,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 18,
     provincia: "San Juan",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -197,6 +200,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 19,
     provincia: "San Luis",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -207,6 +211,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 20,
     provincia: "Santa Cruz",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -217,6 +222,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 21,
     provincia: "Santa Fe",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -227,6 +233,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 22,
     provincia: "Santiago del Estero",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -237,6 +244,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 24,
     provincia: "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
@@ -247,6 +255,7 @@ const provincias = [
     </svg>`,
   },
   {
+    idDistrito: 23,
     provincia: "Tucumán",
     svg: `<svg height="210" width="800">
       <path class="leaflet-interactive"
