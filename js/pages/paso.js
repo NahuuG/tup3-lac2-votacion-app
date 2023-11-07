@@ -4,15 +4,19 @@ const tipoRecuento = 1; // Recuento definitivo
 var cargosGlobal = [];
 var distritosGlobal = [];
 var seccionesGlobal = [];
-const valorDistritoVacio = "Distrito";
-const seleccionDeAño = document.getElementById("seleccion-año");
-const seleccionDeCargo = document.getElementById("seleccion-cargo");
-const seleccionDeDistrito = document.getElementById("seleccion-distrito");
-const seleccionDeSeccion = document.getElementById("seleccion-seccion");
+var seleccionDeAño = document.getElementById("seleccion-año");
+var seleccionDeCargo = document.getElementById("seleccion-cargo");
+var seleccionDeDistrito = document.getElementById("seleccion-distrito");
+var seleccionDeSeccion = document.getElementById("seleccion-seccion");
+var seleccionDeSeccionProvincial = document.getElementById(
+  "hdSeccionProvincial"
+);
 
 var mesasEscrutadas = "";
 var electores = "";
 var participacionSobreEscrutado = "";
+
+var añoSeleccionado = "";
 
 async function fetchDatos() {
   try {
@@ -32,15 +36,19 @@ async function fetchDatos() {
 }
 
 function cargarAños(años) {
-  let selectElement = document.getElementById("seleccion-año");
+  seleccionDeAño.innerHTML = ""; // Limpio opciones anteriores
 
-  let selectHTML = '<option value="0">Año</option>';
+  const placeHolderVacio = document.createElement("option");
+  placeHolderVacio.value = "Año";
+  placeHolderVacio.text = "Año";
+  seleccionDeAño.appendChild(placeHolderVacio); // Genero un primer valor vacio
 
-  selectHTML += años.map((año) => {
-    return `<option value="${año}">${año}</option>`;
+  años.forEach((año) => {
+    const opcionAño = document.createElement("option");
+    opcionAño.value = año;
+    opcionAño.text = año;
+    seleccionDeAño.appendChild(opcionAño);
   });
-
-  selectElement.innerHTML = selectHTML;
 }
 
 // Llamo a las funciones secuencialmente. fetch, luego cargarAños.
@@ -53,9 +61,13 @@ fetchDatos()
   });
 
 function seleccionAño(event) {
-  let añoSeleccionado = event.target.value; // Asigno el elemento del evento
+  añoSeleccionado = event.target.value; // Asigno el elemento del evento
 
-  if (añoSeleccionado && añoSeleccionado != 0) {
+  seleccionDeCargo.value = "Cargo";
+  seleccionDeDistrito.value = "Distrito";
+  seleccionDeSeccion.value = "Sección";
+
+  if (añoSeleccionado != "Año" && añoSeleccionado) {
     // Verifico que no es nulo
     fetchCargos(añoSeleccionado); //Llamo a fetchCargos con el año seleccionado
   }
@@ -93,24 +105,28 @@ async function fetchCargos(selectedValue) {
 }
 
 function cargarCargos(cargos) {
-  let selectElement = document.getElementById("seleccion-cargo");
-  let primerValor = '<option value="0">Cargo</option>';
+  seleccionDeCargo.innerHTML = null;
 
-  const cargosDisponibles = [
-    primerValor,
-    ...cargos.map((cargo) => {
-      return `<option value="${cargo.IdCargo}">${cargo.Cargo}</option>`;
-    }),
-  ]; // Devuelvo un nuevo array
+  const placeHolderVacio = document.createElement("option");
+  placeHolderVacio.value = "Cargo";
+  placeHolderVacio.text = "Cargo";
+  seleccionDeCargo.appendChild(placeHolderVacio); // Genero un primer valor vacio
 
-  selectElement.innerHTML = cargosDisponibles;
+  cargos.forEach((cargo) => {
+    const opcionCargo = document.createElement("option");
+    opcionCargo.value = cargo.IdCargo;
+    opcionCargo.text = cargo.Cargo;
+    seleccionDeCargo.appendChild(opcionCargo);
+  });
 }
 
 function obtenerCargo(event) {
   // Obtiene el cargo seleccionado para mostrar los distritos disponibles
   const idCargo = event.target.value;
+  seleccionDeDistrito.value = "Distrito";
+  seleccionDeSeccion.value = "Sección";
 
-  if (idCargo != 0 && idCargo) {
+  if (idCargo != "Cargo" && idCargo) {
     const cargoSeleccionado = cargosGlobal.find(
       // Busco en el array global el ID del cargo seleccionado, lo almaceno en nueva constante.
       (cargo) => cargo.IdCargo === idCargo
@@ -129,19 +145,18 @@ function obtenerCargo(event) {
 }
 
 function mostrarDistritos(distritos) {
-  let selectElement = document.getElementById("seleccion-distrito");
-  selectElement.innerHTML = null; // Limpio opciones anteriores
+  seleccionDeDistrito.innerHTML = null;
 
   const placeHolderVacio = document.createElement("option");
-  placeHolderVacio.value = valorDistritoVacio;
+  placeHolderVacio.value = "Distrito";
   placeHolderVacio.text = "Distrito";
-  selectElement.appendChild(placeHolderVacio); // Genero un primer valor vacio
+  seleccionDeDistrito.appendChild(placeHolderVacio); // Genero un primer valor vacio
 
   distritos.forEach((distrito) => {
     const opcionDistrito = document.createElement("option");
     opcionDistrito.value = distrito.IdDistrito;
     opcionDistrito.text = distrito.Distrito;
-    selectElement.appendChild(opcionDistrito);
+    seleccionDeDistrito.appendChild(opcionDistrito);
   });
 }
 
@@ -149,8 +164,9 @@ var distritoSeleccionado = "";
 
 function obtenerDistrito(event) {
   const idDistrito = Number(event.target.value);
+  seleccionDeSeccion.value = "Sección";
 
-  if (idDistrito != valorDistritoVacio && idDistrito) {
+  if (idDistrito != "Distrito" && idDistrito) {
     distritoSeleccionado = distritosGlobal.find((distrito) => {
       return distrito.IdDistrito === idDistrito;
     });
@@ -177,19 +193,18 @@ function obtenerDistrito(event) {
 }
 
 function mostrarSecciones(secciones) {
-  let selectElement = document.getElementById("seleccion-seccion");
-  selectElement.innerHTML = null; // Limpio opciones anteriores
+  seleccionDeSeccion.innerHTML = null; // Limpio opciones anteriores
 
   const placeHolderOption = document.createElement("option");
-  placeHolderOption.value = "Sección vacia";
+  placeHolderOption.value = "Sección";
   placeHolderOption.text = "Sección";
-  selectElement.appendChild(placeHolderOption);
+  seleccionDeSeccion.appendChild(placeHolderOption);
 
   secciones.forEach((seccion) => {
     const opcionSeccion = document.createElement("option");
     opcionSeccion.value = seccion.IdSeccion;
     opcionSeccion.text = seccion.Seccion;
-    selectElement.appendChild(opcionSeccion);
+    seleccionDeSeccion.appendChild(opcionSeccion);
   }); // Recorro el array y creo seleccionables por cada elemento del mismo
 }
 
@@ -209,11 +224,10 @@ function obtenerSeccion(event) {
   }).IDSeccionProvincial;
   // Busco en seccionesGlobal si hay un elemento cuyo ID sea igual al seleccionado.
   // Almaceno el valor de su propiedad IDSeccionProvincial en la constante
-
+  console.log("El ID de la seccion es:", idSeccion);
   console.log("El ID de la seccion provincial es:", idSeccionProvincial);
 
-  let selectElement = document.getElementById("hdSeccionProvincial");
-  selectElement.value = idSeccionProvincial; // Asigno el valor
+  seleccionDeSeccionProvincial.value = idSeccionProvincial; // Asigno el valor
 }
 
 async function filtrarDatos() {
@@ -282,15 +296,14 @@ async function filtrarDatos() {
 
 const botonFiltrar = document.getElementById("boton-filtrar");
 
-const mensajeExito = document.querySelector(".mensaje-exito");
-const mensajeError = document.querySelector(".mensaje-error");
-const mensajeIncompleto = document.querySelector(".mensaje-incompleto");
+const mensajeExito = document.getElementById("mensaje-exito");
+const mensajeError = document.getElementById("mensaje-error");
+const mensajeIncompleto = document.getElementById("mensaje-incompleto");
 
 mensajeExito.style.display = "none";
 mensajeError.style.display = "none";
 mensajeIncompleto.style.display = "none";
 
-// Ocultar sectores antes de presionar filtrar
 const sectorTitulos = document.getElementById("sector-titulos");
 const agregarInforme = document.getElementById("agregar-informe-boton");
 const cartasPrincipales = document.getElementById("main-cards");
@@ -298,6 +311,7 @@ const agrupacionesContainer = document.getElementById("agrupaciones-container");
 const mapa = document.getElementById("mapa");
 const chartWrap = document.getElementById("chart-wrap");
 
+// Almaceno los displays originales de cada uno, previo a ocultarlos
 const displayOriginal = {
   sectorTitulos: sectorTitulos.style.display,
   agregarInforme: agregarInforme.style.display,
@@ -317,6 +331,8 @@ chartWrap.style.display = "none";
 var mensajeInicioFiltrar = document.getElementById("mensaje-inicio");
 mensajeInicioFiltrar.textContent =
   "Debe seleccionar los valores a filtrar y hacer clic en el botón FILTRAR";
+mensajeInicioFiltrar.style.marginTop = "50px";
+mensajeInicioFiltrar.style.marginBottom = "50px";
 
 function volverVisiblesMensajes() {
   mensajeInicioFiltrar.style.display = "none";
@@ -329,33 +345,55 @@ function volverVisiblesMensajes() {
 }
 
 botonFiltrar.addEventListener("click", async function () {
-  // Validaciones iniciales
-
-  if (
-    seleccionDeAño.value == "0" ||
-    seleccionDeCargo.value == "0" ||
-    seleccionDeDistrito.value == "Distrito" ||
-    seleccionDeSeccion.value == "Sección vacia" ||
-    mesasEscrutadas == "0"
-  ) {
-    sectorTitulos.style.display = displayOriginal.sectorTitulos;
-    mensajeInicioFiltrar.textContent = "Error: ERROR?";
-    mensajeInicioFiltrar.style.backgroundColor = "red";
-    return;
-  }
+  mostrarMensajeDeCarga();
 
   try {
+    // Llamar a filtrarDatos de manera asíncrona
     await filtrarDatos();
-    return (
-      actualizarInformacionTituloYSubtitulo(),
-      volverVisiblesMensajes(),
-      mostrarInformacionCuadros(),
-      actualizarMapa()
-    );
+
+    if (mesasEscrutadas !== "" && validarFiltros()) {
+      realizarFiltrado();
+      // Oculta el mensaje de carga cuando la operación está completa
+      ocultarMensajeDeCarga();
+    } else if (mesasEscrutadas === "" && validarFiltros()) {
+      actualizarInformacionTituloYSubtitulo();
+      mostrarError(
+        "No se encontró información para la consulta realizada",
+        "#ffc107"
+      );
+    } else {
+      actualizarInformacionTituloYSubtitulo();
+      mostrarError("Error: Los filtros no son válidos", "red");
+    }
   } catch (error) {
-    console.error("Error:", error);
+    // Manejar errores aquí, por ejemplo, mostrar un mensaje de error al usuario.
+    console.error("Error en la función filtrarDatos:", error);
+    mostrarError("Error en la operación", "#dc3545");
   }
 });
+
+function validarFiltros() {
+  return (
+    seleccionDeAño.value !== "Año" &&
+    seleccionDeCargo.value !== "Cargo" &&
+    seleccionDeDistrito.value !== "Distrito" &&
+    seleccionDeSeccion.value !== "Sección"
+  );
+}
+
+function mostrarError(mensaje, colorFondo) {
+  sectorTitulos.style.display = displayOriginal.sectorTitulos;
+  mensajeInicioFiltrar.style.display = "block";
+  mensajeInicioFiltrar.innerHTML = mensaje;
+  mensajeInicioFiltrar.style.backgroundColor = colorFondo;
+}
+
+function realizarFiltrado() {
+  actualizarInformacionTituloYSubtitulo();
+  volverVisiblesMensajes();
+  mostrarInformacionCuadros();
+  actualizarMapa();
+}
 
 function actualizarInformacionTituloYSubtitulo() {
   let tipoEleccion = "PASO";
@@ -378,10 +416,10 @@ function actualizarInformacionTituloYSubtitulo() {
 
 function mostrarInformacionCuadros() {
   // Actualizar elementos con la información
-  document.getElementById("mesas-escrutadas-porcentaje").textContent =
+  document.getElementById("mesas-escrutadas-porcentaje").innerHTML =
     mesasEscrutadas;
-  document.getElementById("electores-porcentaje").textContent = electores;
-  document.getElementById("participacion-porcentaje").textContent =
+  document.getElementById("electores-porcentaje").innerHTML = electores;
+  document.getElementById("participacion-porcentaje").innerHTML =
     participacionSobreEscrutado + "%";
 }
 
@@ -401,6 +439,61 @@ function actualizarMapa() {
   }
 }
 
+function mostrarMensajeDeCarga() {
+  sectorTitulos.style.display = displayOriginal.sectorTitulos;
+  mensajeInicioFiltrar.style.display = "block";
+  mensajeInicioFiltrar.style.backgroundColor = `var(--gris-claro)`;
+  mensajeInicioFiltrar.innerHTML = `<i class="fa-solid fa-spinner"></i>Su operación esta siendo procesada`;
+}
+
+function ocultarMensajeDeCarga() {
+  mensajeInicioFiltrar.style.display = "none";
+}
+
+const agregarAInformesBoton = document.getElementById("agregar-informe-boton");
+
+agregarAInformesBoton.addEventListener("click", function () {
+  const vAnio = seleccionDeAño.value;
+  const vTipoRecuento = tipoRecuento;
+  const vTipoEleccion = tipoEleccion;
+  const vCategoriaId = seleccionDeCargo.value;
+  const vDistrito = seleccionDeDistrito.value;
+  const vSeccionProvincial = seleccionDeSeccionProvincial.value;
+  const vSeccionID = seleccionDeSeccion.value;
+
+  // Cadena con los valores
+  const nuevoRegistro = `${vAnio}|${vTipoRecuento}|${vTipoEleccion}|${vCategoriaId}|${vDistrito}|${vSeccionProvincial}|${vSeccionID}`;
+
+  // Obtiene los registros existentes del localStorage (si los hay)
+  const informesExistenteJSON = JSON.parse(localStorage.getItem("INFORMES"));
+  let informesExistente = [];
+
+  if (informesExistenteJSON) {
+    informesExistente = JSON.parse(informesExistenteJSON);
+  }
+
+  // Verifica si el nuevo registro ya existe
+  if (informesExistente.includes(nuevoRegistro)) {
+    setTimeout(() => {
+      mensajeIncompleto.style.display = "block";
+    }, 4000);
+    mensajeIncompleto.style.display = "none";
+  } else {
+    // Agrega el nuevo registro al array
+    informesExistente.push(nuevoRegistro);
+
+    // Almacena el array actualizado en el localStorage
+    localStorage.setItem("INFORMES", JSON.stringify(informesExistente));
+
+    setTimeout(() => {
+      mensajeExito.style.display = "block";
+    }, 4000);
+
+    mensajeExito.style.display = "none";
+  }
+});
+
+// SVG Mapas
 const provincias = [
   {
     idDistrito: 2,

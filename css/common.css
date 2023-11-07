@@ -199,7 +199,7 @@ footer img {
   border-radius: 10px;
   color: #FFFFFF;
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 300;
   text-align: center;
   background-color: var(--mensaje-usuario-rojo);
 }
@@ -211,7 +211,7 @@ footer img {
   border-radius: 10px;
   color: #FFFFFF;
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 300;
   text-align: center;
   background-color: var(--mensaje-usuario-verde);
 }
@@ -223,7 +223,7 @@ footer img {
   border-radius: 10px;
   color: #FFFFFF;
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 300;
   text-align: center;
   background-color: var(--mensaje-usuario-amarillo);
 }
@@ -236,12 +236,24 @@ footer img {
 
 .mensaje-inicio {
   width: 400px;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 20px auto;
+  padding: 15px;
   border-radius: 10px;
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 400;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 300;
   text-align: center;
   background-color: var(--grafica-amarillo);
+}
+
+#seleccion-cargo {
+  max-width: 300px;
+}
+
+#seleccion-distrito {
+  max-width: 300px;
+}
+
+#seleccion-seccion {
+  max-width: 300px;
 }

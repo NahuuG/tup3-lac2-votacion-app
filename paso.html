@@ -29,11 +29,11 @@
     <div class="menu-header-page">
       <div class="selector-filtros">
         <select id="seleccion-año" name="seleccion-año" class="desplegables" onchange="seleccionAño(event)">
-          <option value="0">Año</option>
+          <option value="Año">Año</option>
         </select>
 
         <select id="seleccion-cargo" name="seleccion-cargo" class="desplegables" onchange="obtenerCargo(event)">
-          <option value="0">Cargo</option>
+          <option value="Cargo">Cargo</option>
         </select>
 
         <select id="seleccion-distrito" name="seleccion-distrito" class="desplegables"
@@ -44,7 +44,7 @@
         <input type="hidden" id="hdSeccionProvincial" name="hdSeccionProvincial" />
 
         <select id="seleccion-seccion" name="seleccion-seccion" class="desplegables" onchange="obtenerSeccion(event)">
-          <option value="Sección vacia">Sección</option>
+          <option value="Sección">Sección</option>
         </select>
       </div>
 
@@ -60,29 +60,27 @@
     <section id="sec-messages">
       <!-- Mensajes de error o éxito -->
       <div id="sector-mensajes">
-        <p class="mensaje-exito">
+        <!-- Mensajes de espera de resultados -->
+        <div class="mensaje-inicio" id="mensaje-inicio"></div>
+
+        <p class="mensaje-exito" id="mensaje-exito">
           <i class="fas fa-thumbs-up"></i>Operación completada con éxito.
         </p>
-        <p class="mensaje-error">
+        <p class="mensaje-error" id="mensaje-error">
           <i class="fas fa-exclamation-triangle"></i>Se produjo un error en la
           operación.
         </p>
-        <p class="mensaje-incompleto">
+        <p class="mensaje-incompleto" id="mensaje-incompleto">
           <i class="fas fa-exclamation"></i>La operacion no se pudo completar.
         </p>
       </div>
     </section>
     <section class="titulo">
       <div id="sector-titulos">
-        <h1 id="titulo-principal">Elecciones | PASO</h1>
+        <h1 id="titulo-principal"></h1>
         <div class="texto-path">
           <p id="subtitulo"></p>
         </div>
-      </div>
-      <div class="mensaje-inicio" id="mensaje-inicio">
-        
-      </div>
-      
     </section>
 
     <section class="main">
