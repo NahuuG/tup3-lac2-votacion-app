@@ -370,11 +370,3 @@ div p {
   display: inline-block;
   white-space: nowrap;
 }
-
-#seleccion-cargo {
-  max-width: 600px;
-}
-
-#seleccion-distrito {
-  max-width: 500px;
-}
