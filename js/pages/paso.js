@@ -364,9 +364,21 @@ botonFiltrar.addEventListener("click", async function () {
           "No se encontró información para la consulta realizada",
           "#ffc107"
         );
+
+        agregarInforme.style.display = "none";
+        cartasPrincipales.style.display = "none";
+        agrupacionesContainer.style.display = "none";
+        mapa.style.display = "none";
+        chartWrap.style.display = "none";
       } else {
         actualizarInformacionTituloYSubtitulo();
         mostrarError("Error: Los filtros no son válidos", "red");
+
+        agregarInforme.style.display = "none";
+        cartasPrincipales.style.display = "none";
+        agrupacionesContainer.style.display = "none";
+        mapa.style.display = "none";
+        chartWrap.style.display = "none";
       }
     }, 2000); // Agrego tiempo de espero
   } catch (error) {
@@ -800,3 +812,43 @@ const coloresAgrupaciones = {
     colorLiviano: "var(--grafica-gris-claro)",
   }, // Agrupación 7
 };
+
+// Obtén el contenedor donde deseas agregar el cuadro de Agrupaciones Políticas
+const contenedor = document.getElementById("cuadro-agrupaciones");
+
+// Recorre el array de agrupaciones y crea elementos HTML para cada una
+agrupaciones.forEach((agrupacion) => {
+  const agrupacionElemento = document.createElement("div");
+  agrupacionElemento.className = "agrupacion";
+
+  // Crea el título de la agrupación con el color correspondiente
+  const tituloAgrupacion = document.createElement("h3");
+  tituloAgrupacion.textContent = `${agrupacion.colorPleno}: ${agrupacion.nombreAgrupacion}`;
+  agrupacionElemento.appendChild(tituloAgrupacion);
+
+  // Recorre las listas de la agrupación y crea un bloque para cada una
+  agrupacion.listas.forEach((lista) => {
+    const listaElemento = document.createElement("div");
+    listaElemento.className = "lista";
+
+    const nombreLista = document.createElement("h4");
+    nombreLista.textContent = lista.nombre;
+    listaElemento.appendChild(nombreLista);
+
+    const porcentajeCalculado = (lista.votos * 100) / agrupacion.votos;
+    const barraAvance = document.createElement("div");
+    barraAvance.className = "barra-avance";
+    barraAvance.style.backgroundColor = agrupacion.colorLiviano;
+    barraAvance.style.width = `${porcentajeCalculado}%`;
+    listaElemento.appendChild(barraAvance);
+
+    const votosLista = document.createElement("p");
+    votosLista.textContent = `Votos: ${lista.votos}`;
+    listaElemento.appendChild(votosLista);
+
+    agrupacionElemento.appendChild(listaElemento);
+  });
+
+  // Agrega la agrupación al contenedor principal
+  contenedor.appendChild(agrupacionElemento);
+});
