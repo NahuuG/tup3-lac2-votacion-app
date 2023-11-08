@@ -15,6 +15,7 @@ var seleccionDeSeccionProvincial = document.getElementById(
 var mesasEscrutadas = "";
 var electores = "";
 var participacionSobreEscrutado = "";
+var valoresTotalizadosPositivos = "";
 
 var añoSeleccionado = "";
 
@@ -277,6 +278,7 @@ async function filtrarDatos() {
     mesasEscrutadas = data.estadoRecuento.mesasTotalizadas;
     electores = data.estadoRecuento.cantidadElectores;
     participacionSobreEscrutado = data.estadoRecuento.participacionPorcentaje;
+    valoresTotalizadosPositivos = data.valoresTotalizadosPositivos;
 
     console.log(
       "Mesas totalizadas:",
@@ -351,20 +353,22 @@ botonFiltrar.addEventListener("click", async function () {
     // Llamar a filtrarDatos de manera asíncrona
     await filtrarDatos();
 
-    if (mesasEscrutadas !== "" && validarFiltros()) {
-      realizarFiltrado();
-      // Oculta el mensaje de carga cuando la operación está completa
-      ocultarMensajeDeCarga();
-    } else if (mesasEscrutadas === "" && validarFiltros()) {
-      actualizarInformacionTituloYSubtitulo();
-      mostrarError(
-        "No se encontró información para la consulta realizada",
-        "#ffc107"
-      );
-    } else {
-      actualizarInformacionTituloYSubtitulo();
-      mostrarError("Error: Los filtros no son válidos", "red");
-    }
+    setTimeout(function () {
+      if (mesasEscrutadas !== 0 && validarFiltros()) {
+        realizarFiltrado();
+        // Oculta el mensaje de carga cuando la operación está completa
+        ocultarMensajeDeCarga();
+      } else if (mesasEscrutadas === 0 && validarFiltros()) {
+        actualizarInformacionTituloYSubtitulo();
+        mostrarError(
+          "No se encontró información para la consulta realizada",
+          "#ffc107"
+        );
+      } else {
+        actualizarInformacionTituloYSubtitulo();
+        mostrarError("Error: Los filtros no son válidos", "red");
+      }
+    }, 2000); // Agrego tiempo de espero
   } catch (error) {
     // Manejar errores aquí, por ejemplo, mostrar un mensaje de error al usuario.
     console.error("Error en la función filtrarDatos:", error);
@@ -465,31 +469,34 @@ agregarAInformesBoton.addEventListener("click", function () {
   const nuevoRegistro = `${vAnio}|${vTipoRecuento}|${vTipoEleccion}|${vCategoriaId}|${vDistrito}|${vSeccionProvincial}|${vSeccionID}`;
 
   // Obtiene los registros existentes del localStorage (si los hay)
-  const informesExistenteJSON = JSON.parse(localStorage.getItem("INFORMES"));
+  const informesExistenteJSON = localStorage.getItem("INFORMES");
   let informesExistente = [];
 
   if (informesExistenteJSON) {
-    informesExistente = JSON.parse(informesExistenteJSON);
+    try {
+      informesExistente = JSON.parse(informesExistenteJSON);
+    } catch (error) {
+      // En caso de error al analizar la cadena JSON, manejarlo o mostrar un mensaje de error.
+      console.error("Error al analizar JSON:", error);
+    }
   }
 
   // Verifica si el nuevo registro ya existe
   if (informesExistente.includes(nuevoRegistro)) {
+    mensajeIncompleto.style.display = "block";
     setTimeout(() => {
-      mensajeIncompleto.style.display = "block";
-    }, 4000);
-    mensajeIncompleto.style.display = "none";
+      mensajeIncompleto.style.display = "none";
+    }, 5000);
   } else {
     // Agrega el nuevo registro al array
     informesExistente.push(nuevoRegistro);
 
     // Almacena el array actualizado en el localStorage
     localStorage.setItem("INFORMES", JSON.stringify(informesExistente));
-
+    mensajeExito.style.display = "block";
     setTimeout(() => {
-      mensajeExito.style.display = "block";
-    }, 4000);
-
-    mensajeExito.style.display = "none";
+      mensajeExito.style.display = "none";
+    }, 5000);
   }
 });
 
@@ -762,3 +769,34 @@ const provincias = [
     </svg>`,
   },
 ];
+
+const coloresAgrupaciones = {
+  1: {
+    colorPleno: "var(--grafica-amarillo)",
+    colorLiviano: "var(--grafica-amarillo-claro)",
+  }, // Agrupación 1
+  2: {
+    colorPleno: "var(--grafica-celeste)",
+    colorLiviano: "var(--grafica-celeste-claro)",
+  }, // Agrupación 2
+  3: {
+    colorPleno: "var(--grafica-bordo)",
+    colorLiviano: "var(--grafica-bordo-claro)",
+  }, // Agrupación 3
+  4: {
+    colorPleno: "var(--grafica-lila)",
+    colorLiviano: "var(--grafica-lila-claro)",
+  }, // Agrupación 4
+  5: {
+    colorPleno: "var(--grafica-lila2)",
+    colorLiviano: "var(--grafica-lila2-claro)",
+  }, // Agrupación 5
+  6: {
+    colorPleno: "var(--grafica-verde)",
+    colorLiviano: "var(--grafica-verde-claro)",
+  }, // Agrupación 6
+  7: {
+    colorPleno: "var(--grafica-gris)",
+    colorLiviano: "var(--grafica-gris-claro)",
+  }, // Agrupación 7
+};
