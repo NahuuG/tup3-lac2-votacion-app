@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/pages/informes.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <script src="js/pages/informes.js" defer></script>
     <script src="js/pages/mapas.js" defer></script>
 </head>
 
@@ -35,9 +37,9 @@
     <main>
         <section id="sec-messages">
             <!-- Mensajes de error o éxito -->
-            <p class="mensaje-exito"><i class="fas fa-thumbs-up"></i>Operación completada con éxito.</p>
-            <p class="mensaje-error"><i class="fas fa-exclamation-triangle"></i>Se produjo un error en la operación.</p>
-            <p class="mensaje-incompleto"><i class="fas fa-exclamation"></i>La operacion no se pudo completar.</p>
+            <p class="mensaje-exito" id="mensaje-exito"><i class="fas fa-thumbs-up"></i>Operación completada con éxito.</p>
+            <p class="mensaje-error" id="mensaje-error"><i class="fas fa-exclamation-triangle"></i>Se produjo un error en la operación.</p>
+            <p class="mensaje-incompleto" id="mensaje-incompleto"><i class="fas fa-exclamation"></i>La operacion no se pudo completar.</p>
         </section>
 
         <section id="sec-titulo">
@@ -58,23 +60,15 @@
                         <th>Datos por agrupación</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tabla-resultados">
                     <!-- Filas de la tabla con datos -->
-                    <tr>
-                        <td class="mapas" title="Ciudad Autónoma de Buenos Aires">
-                            <!--//Ciudad Autónoma de Buenos Aires//-->
-                            <svg height="210">
-                                <path class="leaflet-interactive" stroke="#18a0fb" stroke-opacity="1" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" fill="#18a0fb" fill-opacity="1"
-                                    fill-rule="evenodd"
-                                    d="M182 61L179 56L176 58L178 56L176 53L173 55L169 47L168 48L164 45L157 43L158 41L155 41L154 36L149 32L148 33L143 29L142 30L145 32L140 29L138 32L137 30L140 29L139 26L137 28L136 23L133 22L130 27L103 41L81 99L82 134L131 179L159 140L168 137L171 139L174 138L181 141L186 137L195 136L200 130L207 125L205 120L210 118L210 112L205 107L210 110L213 114L215 113L215 110L217 110L218 112L219 111L217 109L221 111L224 109L220 106L222 106L221 102L218 102L216 104L215 103L217 102L212 102L220 101L219 95L216 92L214 86L208 81L200 83L199 80L201 79L202 81L200 77L206 75L203 75L203 73L206 73L201 71L205 70L199 69L198 68L202 68L200 66L195 67L194 66L198 65L188 62L192 62L190 60L183 59L189 64L187 65z">
-                                </path>
-                            </svg>
+                    <tr id="tablas-todo">
+                        <td class="mapas">
+                            <div id="mapas-svg"></div>
                         </td>
-                        <td class="tipo-de-eleccion">
-                            <p class="texto-elecciones-chico">Elecciones 2020 | Generales</p>
-                            <p class="texto-path-chico">2020 > Generales > Provisorio > Senadores
-                                Nacionales > Buenos Aires</p>
+                        <td class="tipo-de-eleccion" id="tipo-de-eleccion">
+                            <p class="texto-elecciones-chico" id="texto-elecciones-chico"></p>
+                            <p class="texto-path-chico" id="texto-path-chico"></p>
                         </td>
                         <td>
                             <div class="iconos-datos-generales">
@@ -124,9 +118,9 @@
                                             </path>
                                         </g>
                                     </svg>
-                                    <p class="palabras-datos-generales"><span class="bold">Mesas
-                                            computadas:</span><br> 500
-                                    </p>
+                                    <div class="palabras-datos-generales"><span class="bold">Mesas
+                                            computadas:</span><br> <p id="mesas-computadas"></p>
+                                    </div>
                                 </div>
                                 <div class="electores">
                                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -218,9 +212,9 @@
                                                                                     c-0.238-0.571-0.797-0.944-1.416-0.944l0,0c-4.601,1.534-7.55-4.364-8.966-9.319c-2.595-10.027-1.18-14.864,0.473-17.105H180.521z">
                                         </path>
                                     </svg>
-                                    <p class="palabras-datos-generales"><span class="bold">Electores:</span><br>
-                                        10000
-                                    </p>
+                                    <div class="palabras-datos-generales"><span class="bold">Electores:</span><br>
+                                        <p id="electores-porcentaje">
+                                        </div>
                                 </div>
 
                                 <div class="participacion-sobre-escrutado">
@@ -283,29 +277,20 @@
                                         <rect x="195.975" y="387.534" fill="#FFFFFF" width="69.013" height="14.393">
                                         </rect>
                                     </svg>
-                                    <p class="palabras-datos-generales"><span class="bold">Participación sobre
-                                            escrutado:</span><br> 80%
-                                    </p>
+                                    <div class="palabras-datos-generales"><span class="bold">Participación sobre
+                                            escrutado:</span><br>
+                                            <p id="participacion-porcentaje"></p>
+                                    </div>
                                 </div>
                             </div>
                         </td>
                         <td class="agrupaciones">
-                            <div class="datos-por-agrupacion">
-                                <p style="font-weight: bold;">Agrupación 1</p>
-                                <div>
-                                    <p>40%<br> (500 votos)</p>
-                                </div>
-                            </div>
-                            <div class="datos-por-agrupacion">
-                                <p style="font-weight: bold;">Agrupación 2</p>
-                                <div>
-                                    <p>30%<br> (400 votos)</p>
-                                </div>
-                            </div>
-                            <div class="datos-por-agrupacion">
-                                <p style="font-weight: bold;">Agrupación 3</p>
-                                <div>
-                                    <p>20%<br> (300 votos)</p>
+                            <div id="agrupaciones" style="display: flex; justify-content: space-around;">
+                                <div class="datos-por-agrupacion">
+                                    <p style="font-weight: bold;" id="datos-por-agrupacion"></p>
+                                    <div>
+                                        <p id="porcentaje-agrupaciones"></p>
+                                    </div>
                                 </div>
                             </div>
                         </td>

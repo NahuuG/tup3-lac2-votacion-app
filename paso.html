@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/common.css" />
   <link rel="stylesheet" href="css/pages/paso.css" />
   <script src="js/pages/paso.js" defer></script>
+  <script src="js/pages/mapas.js" defer></script>
 </head>
 
 <body>
@@ -165,18 +166,18 @@
         </div>
         <div class="agrupaciones">
           <div class="agrupacion">
-            <h3 id="titulo-general-agrupacion">JUNTOS POR EL CAMBIO</h3>
+            <h3>JUNTOS POR EL CAMBIO</h3>
             <div class="separador"></div>
             <div class="agrupacion-texto">
-              <h3 id="titulo-agrupaciones">JUNTOS</h3>
+              <h3>JUNTOS</h3>
               <div>
-                <p id="porcentaje-agrupacion">38%</p>
-                <p id="total-votos-agrupacion">30000 VOTOS</p>
+                <p>38%</p>
+                <p>30000 VOTOS</p>
               </div>
             </div>
-            <div class="progress">
-              <div class="progress-bar" id="progress-bar">
-                <span class="progress-bar-text" id="progress-bar-text"></span>
+            <div class="progress" style="background: var(--grafica-amarillo-claro)">
+              <div class="progress-bar" style="width: 75%; background: var(--grafica-amarillo)">
+                <span class="progress-bar-text">75%</span>
               </div>
             </div>
 
@@ -230,15 +231,7 @@
       </div>
       <div class="chart-wrap horizontal" id="chart-wrap">
         <div class="title">Resumen de votos</div>
-        <div class="grid">
-          <div class="bar" style="--bar-value: 85%" data-name="Partido 1" title="Your Blog 85%"></div>
-          <div class="bar" style="--bar-value: 23%" data-name="Partido 2" title="Medium 23%"></div>
-          <div class="bar" style="--bar-value: 7%" data-name="Partido 3" title="Tumblr 7%"></div>
-          <div class="bar" style="--bar-value: 38%" data-name="Partido 4" title="Facebook 38%"></div>
-          <div class="bar" style="--bar-value: 35%" data-name="Partido 5" title="YouTube 35%"></div>
-          <div class="bar" style="--bar-value: 30%" data-name="Partido 6" title="LinkedIn 30%"></div>
-          <div class="bar" style="--bar-value: 5%" data-name="Partido 7" title="Twitter 5%"></div>
-          <div class="bar" style="--bar-value: 20%" data-name="Otros" title="Other 20%"></div>
+        <div class="grid" id="grid-votos">
         </div>
       </div>
     </section>
