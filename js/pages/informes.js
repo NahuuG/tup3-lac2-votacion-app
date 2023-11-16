@@ -147,7 +147,7 @@ async function filtrarDatos(informes) {
 
         const pEleccion = document.createElement("p");
         pEleccion.classList.add("texto-path");
-        pEleccion.innerHTML = subtitulo;
+        pEleccion.innerHTML = `<p class="texto-path-chico" id="texto-path-chico">${anioEleccion} > ${eleccionTipo} > ${nombreCargo} > ${nombreDistrito} > ${nombreSeccion}</p>`;
         tdEleccion.appendChild(pEleccion);
 
         const tdCuadros = mostrarInformacionCuadros(
@@ -478,6 +478,7 @@ function generarSubtitulo(
   nuevoTexto = document.getElementById("texto-path-chico");
 
   nuevoTexto.innerHTML = `<p class="texto-path-chico" id="texto-path-chico">${anioEleccion} > ${eleccionTipo} > ${nombreCargo} > ${nombreDistrito} > ${nombreSeccion}</p>`;
+  return nuevoTexto;
 }
 
 function mostrarMensajeDeCarga() {
