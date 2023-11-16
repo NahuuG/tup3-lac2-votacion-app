@@ -566,11 +566,17 @@ function crearListaAgrupacionesYColores() {
     let idAgrupacion = agrupacion.idAgrupacion;
 
     agrupacionesYColores[idAgrupacion] = {
-      colorPleno: coloresAgrupaciones[cont + 1].colorPleno, // Sumar 1
-      colorLiviano: coloresAgrupaciones[cont + 1].colorLiviano,
+      colorPleno:
+        cont < 6
+          ? coloresAgrupaciones[cont + 1].colorPleno
+          : coloresAgrupaciones[7].colorPleno,
+      colorLiviano:
+        cont < 6
+          ? coloresAgrupaciones[cont + 1].colorLiviano
+          : coloresAgrupaciones[7].colorLiviano,
     };
 
-    cont = (cont + 1) % 6; // Se repite del 0 al 5
+    cont = cont + 1;
   });
 }
 
@@ -590,7 +596,7 @@ function completarResumenVotos() {
       divBarra.classList.add("bar");
       divBarra.style.width = `${agrupacion.votosPorcentaje}%`;
       divBarra.style.background = `${
-        agrupacionesYColores[agrupacion.idAgrupacion]
+        agrupacionesYColores[agrupacion.idAgrupacion].colorPleno
       }`;
       divBarra.dataset.name = agrupacion.nombreAgrupacion;
       divBarra.title = `${agrupacion.nombreAgrupacion} ${agrupacion.votosPorcentaje}%`;

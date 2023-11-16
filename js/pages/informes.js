@@ -115,7 +115,7 @@ async function filtrarDatos(informes) {
 
         let eleccionTipo = "";
 
-        if (data.tipoEleccion == 1) {
+        if (tipoEleccion == 1) {
           eleccionTipo = "PASO";
         } else {
           eleccionTipo = "Generales";
@@ -271,7 +271,7 @@ function mostrarMensajeDeCarga() {
   sectorTitulos.style.display = displayOriginal.sectorTitulos;
   mensajeIncompleto.style.display = "block";
   mensajeIncompleto.style.backgroundColor = `var(--gris-claro)`;
-  mensajeIncompleto.innerHTML = `Su operación esta siendo procesada`;
+  mensajeIncompleto.innerHTML = `<i class="fa-solid fa-spinner"></i>Su operación esta siendo procesada`;
 }
 
 function ocultarMensajeDeCarga() {
