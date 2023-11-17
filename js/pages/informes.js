@@ -43,7 +43,7 @@ function hayInformes() {
   } else {
     // Si no hay datos, muestra un mensaje amarillo al usuario.
     mensajeIncompleto.style.display = "block";
-    mensajeIncompleto.innerHTML = `<i class="fas fa-exclamation"></i>No hay informes guardados para mostrar</p>`;
+    mensajeIncompleto.innerHTML = `<i class="fas fa-exclamation"></i>No hay informes guardados para mostrar`;
   }
 }
 
